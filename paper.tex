@@ -375,12 +375,37 @@
 % ----------------------------------------------------------------------------------------------------------------------
 \section{Einleitung}\label{sec:intro}
   Der Fortschritt in der Kommunikationstechnik, wie die Einführung von 5G, hat in den letzten Jahren zu einem wachsenden Interesse an Kommunikation mit und zwischen Fahrzeugen geführt.
+  Anfängliche Vorstellungen der zukünftigen Entwicklungen versprechen eine verstärkte Kommunikation zwischen den Fahrzeugen, welche durch den Austausch von Informationen über die Strassenverhältnisse oder andere verkehrsbezogene Gefahren zu einem sichereren Verkehr auf unseren Autobahnen und Straßen führt.
+  Diese Aussicht führte zu einer vermehrten Ausstattung von Fahrzeugen mit Kommuniationstechnik und der Einführung von Verkehrstelematik (\textit{Intelligent Transportations Systems ITS})\cite{conti2013mobile}.
+  Ein Beispiel dafür sind an Autobahnen montierte Wechselverkehrszeichen, welche über Starßenverhältnisse informieren, flexible Geschwindigkeitsbegrenzungen ermöglichen oder auch die Öffnung und Schließung von Fahrspuren ankündigen.
+  Mithilfe dieser können beispielsweise bei einem Unfall die betroffenen Spuren gesperrt werden, um die Unfallstelle besonders bei nicht vorhandener Geschwindigkeitsbegrenzung frühzeitig zu sichern, oder auch in Hauptverkehrszeiten der Standstreifen als zusätzliche Fahrspur freigegeben werden.
 
+  In den Vereinigten Staaten von Amerika wurde durch die \textit{US Federal Communications Commission (FCC)} ein 75 MHz breites Spektrum im Bereich des 5.850- bis 5.925-GHz-Band für die Nutzung durch \textit{Dedicated Short-Range Communications (DSRC)} reserviert.
+  Dies übertrifft die für die verkehrssichernde Kommunikation notwendigen Kapazitäten.
+  Deshalb wird erwartet, dass Drittanbieter diese überflüssige Bandbreite nutzen, um eigene Anwendungen zu schaffen, welche den Verkehrsteilnehmern angeboten werden.
+  Umgesetzt wurde dies bereits jetzt in Ortsbezogenen Anwendungen oder auch Unterhaltungsmedien.
+  Ein Beispiel dafür ist die Integration von Spotify, YouTube und Netflix oder auch Videospielen in Fahrzeugen des Herstellers Tesla.
+  Mit der Verbreitung dieser Anwendungen wird auch von dem Ausbau der Infrastruktur entlang den Verkehrswege durch Drittanbieter und die Ausstattung von Fahrzeugen mit fähigerer Technik ausgegangen\cite{conti2013mobile}.
+
+  Der aktuelle Stand der Technik in Fahrzeugen reagiert lediglich auf Ereignisse, welche durch die eigene Sensorik wahrgenommen werden und kann nur auf das eigene Fahrzeug einwirken.
+  Ziel ist es, dass diese Informationen und Ressourcen zwischen den Fahrzeugen geteilt werden, um gemeinsam ein Problem zu lösen, welches ohne Kooperation übermäßig lang zu lösen dauern würde (beispielsweise ein Stau) oder mit den begrenzten Ressourcen eines Fahrzeugs gar nicht lösbar wäre.
+  Diese Ausarbeitung stellt das Konzept der \textit{Vehicular Clouds} vor, welches die zwischen den Fahrzeugen bereits vorhandenen Netze ``in die Cloud bringt''\cite{conti2013mobile}.
+  Dazu wird zunächst in Kapitel \ref{sec:basics} auf einige Grundlagen eingegangen, welche das Konzept und nötiges Wissen vorstellen.
+  Daraufhin wird in Kapitel \ref{sec:ccvsvc} die \textit{Vehicular Cloud} vom herkömmlichen \textit{Cloud Computing} abgegrenzt, um die Notwendigkeit von Neuerungen und die entstehenden Herausforderungen zu verdeutlichen.
+  In Kapitel \ref{sec:examples} werden zur Darstellung der durch \textit{Vehicular Clouds} entstehenden Möglichkeiten Anwendungsbeispiele vorgestellt.
+  Aufgrund der Verbindung der Systeme innerhalb eines Fahrzeugs und der Masse an Daten sind Sicherheit und Privatsphäre besonders wichtig, dies wird in Kapitel \ref{sec:securityprivacy} behandelt.
+  Im Anschluss wird in Kapitel \ref{sec:architectures} auf Architekturen eingegangen, welche zur Umsetzung von \textit{Vehicular Clouds} eingesetzt werden können.
+  Kapitel \ref{sec:aggregation} befasst sich mit der Art und Weise, wie die Ressourcen in \textit{Vehicular Clouds} verteilt und erlangt werden können.
+  Schließlich wird in Kapitel \ref{sec:conclusion} ein Fazit gezogen und ein Ausblick auf weitere Entwicklungen gegeben.
 % ----------------------------------------------------------------------------------------------------------------------
 \section{Grundlagen}
 \label{sec:basics}
+In diesem Kapitel wird zunächst auf die bisher verbaute Technik in Fahrzeugen eingegangen und welche Entwicklungen dabei in naher Zukunft absehbar sind.
+Des Weiteren werden Fahrzeug-Ad-hoc-Netze vorgestellt, auf denen \textit{Vehicular Clouds} grundlegend basieren.
+Außerdem wird auf \textit{Cloud Computing} eingegangen, da darin ebenfalls eine Grundlage besteht und dies im weiteren Verlauf zu \textit{Vehicular Clouds} abgegrenzt werden soll.
+Schließlich wird das Konzept der \textit{Vehicular Clouds} vorgestellt.
 
-\subsection{Das Fahrzeugmodell}
+\subsection{Verbaute Technik}
 
 \subsection{Fahrzeug-Ad-hoc-Netze}
 
@@ -405,7 +430,7 @@
 
 % ----------------------------------------------------------------------------------------------------------------------
 \section{Schlüsselverwaltung}
-\label{keymanagement}
+\label{sec:keymanagement}
 
 % ----------------------------------------------------------------------------------------------------------------------
 \section{Mögliche Architekturen}
@@ -421,9 +446,6 @@
 \subsection{Virtualisierung}
 
 \subsection{Lastverteilung}
-% ----------------------------------------------------------------------------------------------------------------------
-\section{Zusammenfassung}
-\label{sec:summary}
 
 % ----------------------------------------------------------------------------------------------------------------------
 \section{Fazit und Ausblick}
