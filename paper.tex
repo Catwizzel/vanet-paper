@@ -327,16 +327,16 @@
 % For demonstration purposes only
 \usepackage[math]{blindtext}
 \usepackage{mwe}
-
-
+% ----------------------------------------------------------------------------------------------------------------------
+% ----------------------------------------------------------------------------------------------------------------------
 \begin{document}
 
-\title{Kommunikationsprotokolle für VANETs}
+\title{Zukünftige Entwicklungen in VANETs}
 %If Title is too long, use \titlerunning
 %\titlerunning{Short Title}
 
 %Single insitute
-\author{Felix Wiegand}
+\author{Fabian Sieber}
 %If there are too many authors, use \authorrunning
 %\authorrunning{First Author et al.}
 \institute{Technische Universität Dortmund}
@@ -360,126 +360,83 @@
 \maketitle
 
 \begin{abstract}
-  Die Kommunikation zwischen einzelnen Fahrzeugen im Verkehrsgeschehen bietet viele Möglichkeiten wie eine erhöhte Sicherheit durch Prävention von Unfällen oder auch ein höherer Verkehrsfluss durch Vermeidung von Staus.
-  Automobile ad-hoc Netze oder auch VANETs (engl. Vehicular ad hoc networks) spielen dabei eine sehr wichtige Rolle.
-  In dieser Ausarbeitung soll die Taxonomie für ein Kommunikationsprotokoll eines automobilen ad-hoc Netzes beschrieben werden.
-  Hierfür werden unterschiedliche Faktoren wie Verkehrs-Infrastruktur, Fahrzeug-Konnektivität oder auch die Kenntnis über andere Fahrzeuge in der Nähe zu Grunde gelegt.
-  Die vorgestellte Taxonomie soll dabei helfen, die grundlegenden Kommunikationsprotokolle zu verstehen und weiterzuentwickeln.
-  Ebenfalls sollen etwaige Grenzen bestimmter Protokolle aufgezeigt werden welche vor dem möglichen Einsatz in VANETs abgeändert werden müssten\cite{conti2013mobile}.
+  Der Fortschritt in der Kommunikationstechnik, wie die Einführung von 5G, hat in den letzten Jahren zu einem wachsenden Interesse an Kommunikation mit und zwischen Fahrzeugen geführt.
+  Dies beinhaltet sowohl Anwendungen im Bereich der Unterhaltung, als auch im Bereich von Assistenzsystemen und der Verkehrsregelung.
+  Aufgrund dieser Zunahme von Kapazitäten innerhalb eines Fahrzeugs bietet sich eine zusätzliche Verwendung der verbauten Technik an.
+  Dazu wird in dieser Ausarbeitung das Konzept von \textit{Vehicular Clouds} vorgestellt und zum herkömmlichen \textit{Cloud Computing} abgegrenzt.
+  Außerdem werden mögliche Anwendungen vorgestellt, welche die durch die Nutzung von \textit{Vehicular Clouds} neuentstehenden Chancen beleuchten.
+  Sicherheit und Privatsphäre sind kritische Aspekte, auf die im späteren Verlauf dieser Ausarbeitung eingegangen wird.
+  Zusätzlich werden mögliche Architekturen und die Aggregation von Ressourcen betrachtet\cite{conti2013mobile}.
 \end{abstract}
 
 \begin{keywords}
-  Mobile ad-hoc Netze, VANET
+  Mobile ad-hoc Netze, VANET, Cloud Computing, Vehicular Cloud
 \end{keywords}
-
+% ----------------------------------------------------------------------------------------------------------------------
 \section{Einleitung}\label{sec:intro}
+  Der Fortschritt in der Kommunikationstechnik, wie die Einführung von 5G, hat in den letzten Jahren zu einem wachsenden Interesse an Kommunikation mit und zwischen Fahrzeugen geführt.
 
-  Das hier ist die Einleitung. Irgendwas mit VANETs und so.
-  The remainder of the paper starts with a presentation of related work (\cref{sec:relatedwork}).
-  It is followed by a presentation of hints on \LaTeX{} (\cref{sec:hints}).
-  Finally, a conclusion is drawn and outlook on future work is made (\cref{sec:outlook}).
+% ----------------------------------------------------------------------------------------------------------------------
+\section{Grundlagen}
+\label{sec:basics}
 
-\section{Taxonomie für VANET-Kommunikationsprotokolle}
-\label{sec:taxcommunicationprotocol}
-Die Anforderungen an Kommunikationsprotokolle für VANETs variieren enorm und sind stark and unterschiedliche äußerliche Faktoren und Charakteristiken von diesen gebunden.
-Im folgenden soll eine Taxonomie basierend auf diesen Faktoren und Charakteristiken für ein solches Protokoll vorgestellt werden.
+\subsection{Das Fahrzeugmodell}
 
-\subsection{Problemstellung}
+\subsection{Fahrzeug-Ad-hoc-Netze}
 
-\subsection{Straßentypen}
-Infrastrukturen und Straßenformen wie zum Beispiel Landstraßen oder Autobahnen müssen bezüglich der Kommunikation zwischen einzelnen Automobilen unterschieden werden.
-So werden Straßenformen wie die Autobahn welche keine Kreuzungen besitzen als \textit{eindimensional (1D)} bezeichnet.
-Ebenso werden Straßen zwischen zwei Kreuzungen als \textit{eindimensional} eingestuft.
-Neben der grundlegen eindimensionalen Straßenform existiert ein allgemeineres Szenario mit vielen Kreuzungen an denen Autos abbiegen können und oft die befahrene Straße wechseln.
-Solch ein Szenario existiert in vielen Städten und wird als \textit{zweidimensional (2D)} bezeichnet.
-Autobahnauffahrten und Kreisverkehre lassen sich keinen der beiden Szenarios eindeutig zuordnen und befinden sich zwischen diesen.
-Kommunikationsprotokolle sollten sich im bestmöglichen Fall an den jeweils vorliegenden Straßentyp anpassen.
-Protokolle welche für den allgemeineren Fall (2D) entwickelt wurden, können auch für eindimensionale Straßentypen angewendet werden.
-Anders herum ist dies nicht ohne weiteres möglich.
+\subsection{Cloud Computing}
 
-\subsection{Benachbarte Fahrzeuge}
-Kommunikationsprotokolle lassen sich in hinsichtlich der erforderlichen Kenntnis über benachbarte Fahrzeuge unterteilen.
-Hierbei kommen manche Protokolle ohne Kentnisse über andere Fahrzeuge in der Nähe aus (\textit{without neighbor knowledge} oder \textit{NN}).
-Im anderen Fall werden periodisch unter allen benachbarten Fahrzeugen Informationen wie Position oder Geschwindigkeit ausgetauscht.
-Diese so genannte \textit{neighbor positional knowledge (NP)} wird mittels DSRC (\textit{engl. Dedicated Short-Range Communication}) ausgetauscht.
-Bei DSRC handelt es sich um ein MAC-Protokoll (\textit{engl. Medium Access Control}) arbeitet auf einem Frequenzbereich um 5,9 GHz.
+\subsection{Vehicular Clouds}
+% ----------------------------------------------------------------------------------------------------------------------
+\section{Cloud Computing und Vehicular Clouds: Worin liegt der Unterschied?}
+\label{sec:ccvsvc}
+% ----------------------------------------------------------------------------------------------------------------------
+\section{Anwendungsbeispiele}
+\label{sec:examples}
 
-\subsection{Benachrichtigungen}
+\subsection{Beispiel 1}
 
-\subsection{Starting Forwarder Selection}
+\subsection{Beispiel 2}
 
-\subsection{Compete to Retransmit}
+\subsection{Beispiel 3}
+% ----------------------------------------------------------------------------------------------------------------------
+\section{Sicherheit und Privatsphäre}
+\label{sec:securityprivacy}
 
-\subsection{Konnektivität}
+% ----------------------------------------------------------------------------------------------------------------------
+\section{Schlüsselverwaltung}
+\label{keymanagement}
 
-\subsection{Dringlichkeit von Nachrichten}
+% ----------------------------------------------------------------------------------------------------------------------
+\section{Mögliche Architekturen}
+\label{sec:architectures}
 
-\subsection{Aufbau einer Nachricht}
+\subsection{Statisch}
 
-\section{Zuverlässigkeitsorientierte Geocasting Protokolle}
-\label{sec:reliabiltyorientedgeoprotocolls}
+\subsection{Dynamisch}
+% ----------------------------------------------------------------------------------------------------------------------
+\section{Ansätze für Aggregation von Ressourcen}
+\label{sec:aggregation}
 
-\subsection{Reliable and Efficient Broadcasting in VANETs (ackPBSM)}
+\subsection{Virtualisierung}
 
-\subsection{Persistance-Based Protocols}
-
-\section{Zeitkritische Geocasting Protokolle}
-\label{sec:timecriticalgeoprotocolls}
-
-\subsection{Multihop Vehicular Broadcast (MHVB)}
-
-\subsection{Emergency Message Dissemination with ACK-Overhearing Based Retransmission (EMDOR)}
-
-\subsection{Distributed Fair Power Adjustment Protocol (D-FPAV)}
-
-\subsection{Receiver Consensus (ReC)}
-
-\section{Kleinräumige Routing Protokolle}
-\label{sec:smallscaleprotocols}
-
-\subsection{DPP und OPERA}
-
-\subsection{Binary-Partition-Assisted Broadcast (BPAB)}
-
-\subsection{Track Detection und Distance Defer Transmission Protocols (TRADE und DDT)}
-
-\subsection{Connection-Based Restricted Forwarding (CBRF)}
-
-\subsection{Distributed Vehicular Broadcast (DV-CAST)}
-
-\subsection{Vehicle Density-Based Emergency Broadcasting (VDEB)}
-
-\subsection{Topology-Assisted Geo-Opportunistic Routing (TO-GO)}
-
-\section{Großräumige Routing Protokolle}
-\label{sec:smallscaleprotocols}
-
-\subsection{Distance-Aware Epidemic Routing (DAER)}
-\subsection{Connectivity-Aware Routing (CAR)}
-
-\subsection{Delay-Bounded Routing in VANETs (D-Greedy)}
-\subsection{Vehicle-Assisted Data Delivery in VANETs (VADD)}
-\subsection{Trajectory-Based Data Forwarding for Light-Traffic in VANETs (TBD)}
-\subsection{Static-Node-Assisted Adaptive Routing Protocol in VANETs (SADV)}
-\subsection{Location- and Delay-Aware Cross-Layer Communication (LD-CROP)}
-\subsection{Geopgraphical Opportunistic Routing (GeoOpps)}
-\subsection{Road-Based Vehicular Traffic Routing (RBVT)}
-\subsection{Improved Greedy Traffic-Aware Routing Protocol (GyTAR)}
-\subsection{Acces-Overlay Routing by Two-Phase Routing Protocol (TOPO)}
-
+\subsection{Lastverteilung}
+% ----------------------------------------------------------------------------------------------------------------------
 \section{Zusammenfassung}
 \label{sec:summary}
 
+% ----------------------------------------------------------------------------------------------------------------------
 \section{Fazit und Ausblick}
 \label{sec:conclusion}
 
-\subsubsection*{Acknowledgments}
-\ldots
+% ----------------------------------------------------------------------------------------------------------------------
+% \subsubsection*{Acknowledgments}
+% \ldots
 
-In the bibliography, use \texttt{\textbackslash textsuperscript} for \qq{st}, \qq{nd}, \ldots:
-E.g., \qq{The 2\textsuperscript{nd} conference on examples}.
-When you use \href{https://www.jabref.org}{JabRef}, you can use the clean up command to achieve that.
-See \url{https://help.jabref.org/en/CleanupEntries} for an overview of the cleanup functionality.
+% In the bibliography, use \texttt{\textbackslash textsuperscript} for \qq{st}, \qq{nd}, \ldots:
+% E.g., \qq{The 2\textsuperscript{nd} conference on examples}.
+% When you use \href{https://www.jabref.org}{JabRef}, you can use the clean up command to achieve that.
+% See \url{https://help.jabref.org/en/CleanupEntries} for an overview of the cleanup functionality.
 
 \renewcommand{\bibsection}{\section*{References}} % requried for natbib to have "References" printed and as section*, not chapter*
 % Use natbib compatbile splncsnat style.
@@ -500,5 +457,5 @@ See \url{https://help.jabref.org/en/CleanupEntries} for an overview of the clean
 % Enfore empty line after bibliography
 \ \\
 %
-All links were last followed on October 5, 2017.
+Alle Links wurden zuletzt am 14. Januar 2021 aufgerufen.
 \end{document}
