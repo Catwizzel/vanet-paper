@@ -446,8 +446,48 @@ Fahrzeug-Ad-hoc-Netze befinden sich weiterhin auf dem Vormarsch der Verbreitung 
 Diese Entwicklungen lassen uns auf eine Revolution des Straßenverkehrs hoffen, sodass eine sichere, robuste und mit einer Rechnerallgegenwart versehene Umgebung innerhalb unseres Straßenverkehrs entsteht\cite{conti2013mobile}.
 
 \subsection{Cloud Computing}
+Im Allgemeinen wird der Begriff \textit{Cloud Computing} als Synonym für über das Internet bereitgestellte Gehostete Dienste genutzt.
+Genauer genommen wird damit ein Modell bezeichnet, welches Ressourcen zeitnah und ohne Eingriff des Bereitstellers zur Verfügung stellt.
+Solche Ressourcen sind beispielsweise Bandbreite, Arbeitsspeicher, Prozessierleistung oder auch Speicher.
+\textit{Cloud Computing} hat sich als eigenes Geschäftsfeld etabliert, da mittlerweile ein relativ günstiger Highspeed-Internetzugang möglich ist und aktuelle Technik effiziente Virtualisierung ermöglicht.
+Dadurch ist es besonders für kleine Unternehmen oft wirtschaftlich, auf Drittanbieter zurückzugreifen anstatt eigene Infrastruktur aufzubauen.
+Dies erübrigt zusätzlich die Notwendigkeit von Angestellten, welche die eigene Infrastruktur bedienen und warten können müssten.
+\textit{Cloud IT services} erweitern dieses Modell um Anwendungen und Dienste, sodass Nutzer mit minimalem Aufwand ihre benötigten Ressourcen skalieren können.
+Dadurch ergeben sich drei schwerwiegende Vorteile\cite{conti2013mobile}:
+\begin{itemize}
+\item Nutzer haben den Eindruck von unendlichen Ressourcen, die sie bei Bedarf abrufen können, sodass sich weite Vorausplanung erübrigt.
+\item Nutzer haben die Möglichkeit mit wenigen Ressourcen zu beginnen und diese bei Bedarf einfach erweitern zu können.
+\item Nutzer können Ressourcen für kurze Zeiträume buchen und somit in der Zwischenzeit kosten sparen, falls große Mengen von Ressourcen nur zeitweise benötigt werden.
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{images/cloudComputing}
+\caption{Unterschiede zwischen den Kategorien des \textit{Cloud Computing}\cite{azure}}
+\label{fig:ccCategories}
+\end{figure}
+
+Wie in Figur \ref{fig:ccCategories} gezeigt lässt sich \textit{Cloud Computing} in folgende drei Kategorien unterteilen\cite{conti2013mobile}:
+\begin{itemize}
+\item[1.] \textit{Infrastructure-as-a-Service (IaaS)}. Dem Nutzer werden Ressourcen wie Prozessierleistung, Speicher und Bandbreite bereitgestellt. Ein Beispiel dafür sind die \textit{Amazon Web Services (AWS)}.
+\item[2.] \textit{Platform-as-a-Service (PaaS)}. Dem Nutzer werden zusätzlich Entwicklerwerkzeuge zur Verfügung gestellt, um Webanwendungen ohne lokale Installation entwickeln zu können. \textit{Microsoft Azure} ist ein Beispiel für diese Kategorie.
+\item[3.] \textit{Software-as-a-Service (SaaS)}. Dem Nutzer wird die Verwendung einer Anwendung per Abonnement gestattet, sodass kostspielige Software zeitweise zu einem geringeren Preis genutzt werden kann. Ein Beispiel für diese Kategorie sind \textit{Microsoft 365} oder auch die \textit{Adobe Creative Cloud}.
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{images/cloudArchitecture}
+\caption{Die Eucalyptus Cloud Architektur.}
+\label{fig:ccArchitecture}
+\end{figure}
+
+Figur \ref{fig:ccArchitecture} stellt den Aufbau der Open-Souce-Infrastruktur Eucalyptus und somit die Funktionsweise von \textit{Cloud Computing} dar.
+Der Nutzer kommuniziert mittels einer Anwendung mit dem \textit{Cloud Controller}, welcher den Austausch von Daten mit mehreren Diensten ermöglicht, die vom Back-End bereitgestellt werden.
+Dazu kommuniziert der \textit{Cloud Controller} mit mehreren \textit{Cluster Controllern}, welche wiederum mit mehreren \textit{Node Controllern} kommunizieren.
+Im Normalfall ist solch ein \textit{Node Controller} eine Anwendung, die auf einem einzelnen Server eines Rechenzentrums läuft\cite{conti2013mobile}.
 
 \subsection{Vehicular Clouds}
+
 % ----------------------------------------------------------------------------------------------------------------------
 \section{Cloud Computing und Vehicular Clouds: Worin liegt der Unterschied?}
 \label{sec:ccvsvc}
@@ -490,6 +530,8 @@ Diese Entwicklungen lassen uns auf eine Revolution des Straßenverkehrs hoffen, 
 % ----------------------------------------------------------------------------------------------------------------------
 % \subsubsection*{Acknowledgments}
 % \ldots
+
+\listoffigures
 
 % In the bibliography, use \texttt{\textbackslash textsuperscript} for \qq{st}, \qq{nd}, \ldots:
 % E.g., \qq{The 2\textsuperscript{nd} conference on examples}.
