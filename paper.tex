@@ -468,11 +468,11 @@ Dadurch ergeben sich drei schwerwiegende Vorteile\cite{conti2013mobile}:
 \label{fig:ccCategories}
 \end{figure}
 
-Wie in Figur \ref{fig:ccCategories} gezeigt lässt sich \textit{Cloud Computing} in folgende drei Kategorien unterteilen\cite{conti2013mobile}:
+Wie in Abbildung \ref{fig:ccCategories} gezeigt lässt sich \textit{Cloud Computing} in folgende drei Kategorien unterteilen\cite{conti2013mobile}:
 \begin{itemize}
-\item[1.] \textit{Infrastructure-as-a-Service (IaaS)}. Dem Nutzer werden Ressourcen wie Prozessierleistung, Speicher und Bandbreite bereitgestellt. Ein Beispiel dafür sind die \textit{Amazon Web Services (AWS)}.
-\item[2.] \textit{Platform-as-a-Service (PaaS)}. Dem Nutzer werden zusätzlich Entwicklerwerkzeuge zur Verfügung gestellt, um Webanwendungen ohne lokale Installation entwickeln zu können. \textit{Microsoft Azure} ist ein Beispiel für diese Kategorie.
-\item[3.] \textit{Software-as-a-Service (SaaS)}. Dem Nutzer wird die Verwendung einer Anwendung per Abonnement gestattet, sodass kostspielige Software zeitweise zu einem geringeren Preis genutzt werden kann. Ein Beispiel für diese Kategorie sind \textit{Microsoft 365} oder auch die \textit{Adobe Creative Cloud}.
+\item[1.] \textit{Infrastructure as a Service (IaaS)}. Dem Nutzer werden Ressourcen wie Prozessierleistung, Speicher und Bandbreite bereitgestellt. Ein Beispiel dafür sind die \textit{Amazon Web Services (AWS)}.
+\item[2.] \textit{Platform as aService (PaaS)}. Dem Nutzer werden zusätzlich Entwicklerwerkzeuge zur Verfügung gestellt, um Webanwendungen ohne lokale Installation entwickeln zu können. \textit{Microsoft Azure} ist ein Beispiel für diese Kategorie.
+\item[3.] \textit{Software as aService (SaaS)}. Dem Nutzer wird die Verwendung einer Anwendung per Abonnement gestattet, sodass kostspielige Software zeitweise zu einem geringeren Preis genutzt werden kann. Ein Beispiel für diese Kategorie sind \textit{Microsoft 365} oder auch die \textit{Adobe Creative Cloud}.
 \end{itemize}
 
 \begin{figure}[h]
@@ -482,12 +482,13 @@ Wie in Figur \ref{fig:ccCategories} gezeigt lässt sich \textit{Cloud Computing}
 \label{fig:ccArchitecture}
 \end{figure}
 
-Figur \ref{fig:ccArchitecture} stellt den Aufbau der Open-Souce-Infrastruktur Eucalyptus und somit die Funktionsweise von \textit{Cloud Computing} dar.
+Abbildung \ref{fig:ccArchitecture} stellt den Aufbau der Open-Souce-Infrastruktur Eucalyptus und somit die Funktionsweise von \textit{Cloud Computing} dar.
 Der Nutzer kommuniziert mittels einer Anwendung mit dem \textit{Cloud Controller}, welcher den Austausch von Daten mit mehreren Diensten ermöglicht, die vom Back-End bereitgestellt werden.
 Dazu kommuniziert der \textit{Cloud Controller} mit mehreren \textit{Cluster Controllern}, welche wiederum mit mehreren \textit{Node Controllern} kommunizieren.
 Im Normalfall ist solch ein \textit{Node Controller} eine Anwendung, die auf einem einzelnen Server eines Rechenzentrums läuft\cite{conti2013mobile}.
 
 \subsection{Vehicular Clouds}
+\label{sec:vc}
 Kapitel \ref{sec:cc} hat gezeigt, dass durch \textit{Cloud Computing} weniger ungenutzte Ressourcen entstehen und die zugrundeliegenden Infrastrukturen somit wirtschaftlicher werden.
 Zusätzlich ist bekannt, dass Fahrzeuge die meiste Zeit ungenutzt auf Parkplätzen, in Garagen oder am Straßenrand stehen und somit ihre Ressourcen verschwendet werden.
 Dadurch erscheint es logisch, dass das Interesse entsteht, dieses Prinzip auch auf Fahrzeuge anzuwenden.
@@ -501,6 +502,46 @@ Mit diesen Ressourcen könnten Berechnungen zur Auflösung eines Staus angestell
 % ----------------------------------------------------------------------------------------------------------------------
 \section{Cloud Computing und Vehicular Clouds: Worin liegt der Unterschied?}
 \label{sec:ccvsvc}
+Oberflächlich betrachtet weichen statische \textit{Vehicular Clouds} nicht vom herkömmlichen \textit{Cloud Computing} ab.
+Genauer betrachtet existierenden allerdings zusätzliche Herausforderungen, wie beispielsweise eine limitierte Stromversorgung.
+Außerem können, wie in Kapitel \ref{sec:vc} beschrieben, auch dynamische \textit{Vehicular Clouds} existieren, in denen die Fahrzeuge sich bewegen.
+Fahrzeuge werden währenddessen vermehrt auf Probleme treffen, die aufgrund ihres spontanen Auftretens nicht mit vordefinierten Ressourcen gelöst werden können.
+Dabei häufen sich meist mehrere Fahrzeuge, beispielsweise in Form eines Staus.
+Es muss eine zeitnahe Einschätzung der benötigten Ressourcen erfolgen und durch die Fahrzeuge vor Ort bereitgestellt werden.
+Diese Fähigkeit besitzt \textit{Cloud Computing} nicht.
+Im Folgenden werden drei zusätzliche Cloud-Dienste vorgestellt, die durch \textit{Vehicular Clouds} realisierbar sind\cite{conti2013mobile}.
+
+\subsection{\textit{Network as a Service (NaaS)}}
+Während manche Fahrzeuge während der Fahrt über eine Internetverbindung verfügen, muss dies nicht für alle Fahrzeuge der Fall sein.
+Es bietet sich für zuerst genannte Fahrzeuge an, ihre Internetverbindung den anderen Fahrzeugen zu Verfügung zu stellen.
+Vergleicht man diesen Anwendungsfall mit der Nutzung von Smartphones, wird einem klar, dass in Zukunft vermutlich sämtliche Fahrzeuge über eine Internetverbindung per Mobilfunk oder WiFi verfügen.
+Doch selbst dann bietet sich dieser Dienst an, da Fahrzeuge ihre überschüssige Bandbreite zu Verfügung stellen können, falls diese von anderen Fahrzeugen für beispielsweise Unterhaltungsanwendungen benötgt wird.
+Es wird davon ausgegangen, dass die Bereitschaft die Bandbreite zu Verfügung zu stellen durch die jeweiligen Fahrzeuge verbreitet wird.
+Diese Information könnte von anderen Fahrzeugen transient weitergegeben werden, um sich als Knoten zwischen dem bereitstellenden und dem anfordernden Fahrzeug anzubieten.
+Dadurch könnten auch Fahrzeuge diesen Dienst nutzen, die sich nicht in direkter Umgebung eines Fahrzeugs mit Mobilfunk befinden.
+Einfacher wird dieser Dienst sogar durch die Tatsache, dass die Fahrzeuge im Durchschnitt nur geringe Geschwindigkeitsunterschiede besitzen werden, solange sie dieselbe Fahrtrichtung besitzen.
+Deshalb kann das System auf Protokolle und Erkenntnisse traditioneller Mobiler Ad-Hoc-Netzwerke \textit{(MANETs)} zurückgreifen\cite{conti2013mobile}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{images/networkAAS}
+\caption{Illustration einer NaaS-Anwendung.}
+\label{fig:NaaS}
+\end{figure}
+
+Abbildung \ref{fig:NaaS} stellt solch eine Situation auf einer dreispurigen Autobahn beispielhaft dar.
+Neben der Autobahn befindet sich ein Zugangspunkt \textbf{w}, welcher mittels WiFi eine Internetverbindung bereitstellt.
+Das Fahrzeug \textbf{e} befindet sich in direkter Nähe zum \textbf{w} und kann somit diese Internetverbindung transient zu Verfügung stellen.
+Außerdem verfügen die Fahrzeuge \textbf{a} und \textbf{d} über 5G.
+Die Fahrzeuge \textbf{a}, \textbf{d} und \textbf{e} werden diese Information regelmäßig an die Fahrzeuge in ihrer Nähe senden.
+Sollte sich nun also beispielsweise Fahrzeug \textbf{c} dazu entscheiden, eine Internetverbindung herstellen zu wollen, kann es anhand mehrerer Parameter abschätzen, welches Angebot am besten zu seinem Anwendungszweck passt.
+Solche Parameter sind beispielsweise die relative Geschwindigkeit zwischen den Fahrzeugen, die Stabilität der Verbindung, die Verbindungsgeschwindigkeit oder auch die voraussichtliche Nutzungsdauer der Verbindung.
+Falls Fahrzeug \textbf{c} eine kleine Nachricht, wie eine Mail, versenden möchte oder auch eine kleine Datei herunterladen möchte, wäre es sinnvoll die Verbindung über Fahrzeug \textbf{e} zu dem Zugangspunkt \textbf{e} zu nutzen, da eine hohe Verbindungsgeschwindigkeit und eine voraussichtlich niedrige Verbindungsdauer vorliegen.
+Ist allerdings die Stabilität der Verbindung essenziell oder die voraussichtliche Dauer der Verbindung länger, wie bei einem Videotelefonat, bietet sich eine Verbindung zu Fahrzeug \textbf{a} oder \textbf{d} eher an.
+
+\subsection{\textit{Storage as a Service (STaaS)}}
+
+\subsection{\textit{Cooperation as a Service (CaaS)}}
 % ----------------------------------------------------------------------------------------------------------------------
 \section{Anwendungsbeispiele}
 \label{sec:examples}
