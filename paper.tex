@@ -537,11 +537,31 @@ Die Fahrzeuge \textbf{a}, \textbf{d} und \textbf{e} werden diese Information reg
 Sollte sich nun also beispielsweise Fahrzeug \textbf{c} dazu entscheiden, eine Internetverbindung herstellen zu wollen, kann es anhand mehrerer Parameter abschätzen, welches Angebot am besten zu seinem Anwendungszweck passt.
 Solche Parameter sind beispielsweise die relative Geschwindigkeit zwischen den Fahrzeugen, die Stabilität der Verbindung, die Verbindungsgeschwindigkeit oder auch die voraussichtliche Nutzungsdauer der Verbindung.
 Falls Fahrzeug \textbf{c} eine kleine Nachricht, wie eine Mail, versenden möchte oder auch eine kleine Datei herunterladen möchte, wäre es sinnvoll die Verbindung über Fahrzeug \textbf{e} zu dem Zugangspunkt \textbf{e} zu nutzen, da eine hohe Verbindungsgeschwindigkeit und eine voraussichtlich niedrige Verbindungsdauer vorliegen.
-Ist allerdings die Stabilität der Verbindung essenziell oder die voraussichtliche Dauer der Verbindung länger, wie bei einem Videotelefonat, bietet sich eine Verbindung zu Fahrzeug \textbf{a} oder \textbf{d} eher an.
-
-\subsection{\textit{Storage as a Service (STaaS)}}
+Ist allerdings die Stabilität der Verbindung essenziell oder die voraussichtliche Dauer der Verbindung länger, wie bei einem Videotelefonat, bietet sich eine Verbindung zu Fahrzeug \textbf{a} oder \textbf{d} eher an\cite{conti2013mobile}.
 
 \subsection{\textit{Cooperation as a Service (CaaS)}}
+Fahrzeug-Ad-hoc-Netze wurden entwickelt, um den Verkehrsteilnehmern ein breites Spektrum an Diensten zu Verfügung zu stellen.
+Darunter fallen Verkehrsinformationen, Wetter- und Straßenverhältnisse, Verkehrswarnungen oder auch Erweiterungen von Assistenzsystemen, die der Sicherheit der Verkehrsteilnehmer dienen.
+Diese Dienste können mittels 5G oder Verkehrstelematik \textit{(ITS)} bereitgestellt werden.
+Dazu werden allerdings Systeme an den Straßen und Autobahnen benötigt, welche sowohl mit anfänglichen Baukosten als auch mit dauerhaften Betriebskosten verbunden sind.
+Außerdem benötigt jedes Fahrzeug dazu ein mindestmaß an Bandbreite, wodurch ein großer Ressourcenverbrauch entstehen kann.
+Um die so entstehenden Kosten gering zu halten, wurde das Konzept \textit{Cooperation as a Service (CaaS)} entwickelt.
+\textit{CaaS} setzt auf ein Publish-Subscribe-Muster, in dem Absender und Empfänger von Nachrichten ihr Interesse an Diensten mitteilen und daraufhin bei überschneidenden Interessen kooperieren, um alle für diesen Dienst notwendigen Informationen zu sammeln und auszutauschen.
+Das Netzwerk könnte dazu in mehrere \textit{Cluster}, welche respektiv für die Dienste sind, aufgeteilt werden.
+Für die Kommunikation zwischen den \textit{Clustern} wird \textit{Delay Tolerant Networking} genutzt, um nicht durch eine geringere Stabilität des Netzwerks aufgrund der neuen Herausforderungen von \textit{Vehicular Clouds} eingeschränkt zu werden.
+Für die Kommunikation innerhalb von \textit{Clustern} auf \textit{content-based routing} gesetzt, sodass Nachrichten mittels Überprüfung des Inhalts an die Fahrzeuge weitergeleitet werden kann, die sich dafür interessieren, ohne zuvor explizit die Empfänger festzulegen.
+
+\subsection{\textit{Storage as a Service (STaaS)}}
+Eine weitere Idee besteht darin, dass Fahrzeuge auch ihren Speicherplatz zu Verfügung stellen könnten.
+Dabei muss allerdings beachtet werden, dass die Nutzer dieses Dienstes, im Gegensatz zu \textit{NaaS} oder \textit{IaaS}, eventuell keinen sofortigen Vorteil erhalten, sondern dieser erst nach einer bestimmten Zeitspanne eintritt.
+Dies trifft beispielsweise auf die Auslagerung von Backups zu.
+Es wird ebenso davon ausgegangen, dass Fahrzeuge aufgrund von zunehmend geringeren Kosten und geringerer Baugröße von Speicher die Fahrzeuge mit mehr Speicher ausgestattet werden sein, als notwendig wäre\cite{conti2013mobile}.
+Diesem Punkt kann ich allerdings nicht vollkommen zustimmen, da in der Automobilbranche bei Zulieferern bereits geringe Preisunterschiede ausschlaggebend sind.
+Deshalb werden aufgrund der Produktionsmenge die Fahrzeuge vermutlich nicht mit übermäßigen Speicherkapazitäten ausgestattet sein.
+Eine zusätzliche Herausforderung besteht darin, dass die Fahrzeuge sich vermutlich voneinander entfernen, bevor der Nutzen des Dienstes eingetreten ist.
+Je nach Anwendungsfall könnte allerdings selbst dann der Zugriff auf die gespeicherten Informationen per Internet erfolgen.
+Es lassen sich also sicherlich Anwendungsfälle für diesen Dienst finden, welche trotz dieser Herausforderung einen Nutzen bieten.
+
 % ----------------------------------------------------------------------------------------------------------------------
 \section{Anwendungsbeispiele}
 \label{sec:examples}
