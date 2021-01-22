@@ -363,7 +363,7 @@
   Der Fortschritt in der Kommunikationstechnik, wie die Einführung von 5G, hat in den letzten Jahren zu einem wachsenden Interesse an Kommunikation mit und zwischen Fahrzeugen geführt.
   Dies beinhaltet sowohl Anwendungen im Bereich der Unterhaltung, als auch im Bereich von Assistenzsystemen und der Verkehrsregelung.
   Aufgrund dieser Zunahme von Kapazitäten innerhalb eines Fahrzeugs bietet sich eine zusätzliche Verwendung der verbauten Technik an.
-  Dazu wird in dieser Ausarbeitung das Konzept von \textit{Vehicular Clouds} vorgestellt und zum herkömmlichen \textit{Cloud Computing} abgegrenzt.
+  Dazu wird in dieser Ausarbeitung das Konzept von \textit{Vehicular Clouds (VCs)} vorgestellt und zum herkömmlichen \textit{Cloud Computing} abgegrenzt.
   Außerdem werden mögliche Anwendungen vorgestellt, welche die durch die Nutzung von \textit{Vehicular Clouds} neuentstehenden Chancen beleuchten.
   Sicherheit und Privatsphäre sind kritische Aspekte, auf die im späteren Verlauf dieser Ausarbeitung eingegangen wird.
   Zusätzlich werden mögliche Architekturen und die Aggregation von Ressourcen betrachtet\cite{conti2013mobile}.
@@ -389,7 +389,7 @@
 
   Der aktuelle Stand der Technik in Fahrzeugen reagiert lediglich auf Ereignisse, welche durch die eigene Sensorik wahrgenommen werden und kann nur auf das eigene Fahrzeug einwirken.
   Ziel ist es, dass diese Informationen und Ressourcen zwischen den Fahrzeugen geteilt werden, um gemeinsam ein Problem zu lösen, welches ohne Kooperation übermäßig lang zu lösen dauern würde (beispielsweise ein Stau) oder mit den begrenzten Ressourcen eines Fahrzeugs gar nicht lösbar wäre.
-  Diese Ausarbeitung stellt das Konzept der \textit{Vehicular Clouds} vor, welches die zwischen den Fahrzeugen bereits vorhandenen Netze ``in die Cloud bringt''\cite{conti2013mobile}.
+  Diese Ausarbeitung stellt das Konzept der \textit{Vehicular Clouds (VCs)} vor, welches die zwischen den Fahrzeugen bereits vorhandenen Netze ``in die Cloud bringt''\cite{conti2013mobile}.
   Dazu wird zunächst in Kapitel \ref{sec:basics} auf einige Grundlagen eingegangen, welche das Konzept und nötiges Wissen vorstellen.
   Daraufhin wird in Kapitel \ref{sec:ccvsvc} die \textit{Vehicular Cloud} vom herkömmlichen \textit{Cloud Computing} abgegrenzt, um die Notwendigkeit von Neuerungen und die entstehenden Herausforderungen zu verdeutlichen.
   In Kapitel \ref{sec:examples} werden zur Darstellung der durch \textit{Vehicular Clouds} entstehenden Möglichkeiten Anwendungsbeispiele vorgestellt.
@@ -402,8 +402,8 @@
 \label{sec:basics}
 In diesem Kapitel wird zunächst auf die bisher verbaute Technik in Fahrzeugen eingegangen und welche Entwicklungen dabei in naher Zukunft absehbar sind.
 Des Weiteren werden Fahrzeug-Ad-hoc-Netze vorgestellt, auf denen \textit{Vehicular Clouds} grundlegend basieren.
-Außerdem wird auf \textit{Cloud Computing} eingegangen, da darin ebenfalls eine Grundlage besteht und dies im weiteren Verlauf zu \textit{Vehicular Clouds} abgegrenzt werden soll.
-Schließlich wird das Konzept der \textit{Vehicular Clouds} vorgestellt.
+Außerdem wird auf \textit{Cloud Computing} eingegangen, da darin ebenfalls eine Grundlage besteht und dies im weiteren Verlauf zu \textit{VCs} abgegrenzt werden soll.
+Schließlich wird das Konzept der \textit{VCs} vorgestellt.
 
 \subsection{Verbaute Technik}
 In den letzten zwei Jahrzenten hat sich ein Trend der Fahrzeughersteller abgezeichnet, ihre Fahrzeuge intelligenter und sicherer zu gestalten.
@@ -504,12 +504,12 @@ Mit diesen Ressourcen könnten Berechnungen zur Auflösung eines Staus angestell
 \label{sec:ccvsvc}
 Oberflächlich betrachtet weichen statische \textit{Vehicular Clouds} nicht vom herkömmlichen \textit{Cloud Computing} ab.
 Genauer betrachtet existierenden allerdings zusätzliche Herausforderungen, wie beispielsweise eine limitierte Stromversorgung.
-Außerem können, wie in Kapitel \ref{sec:vc} beschrieben, auch dynamische \textit{Vehicular Clouds} existieren, in denen die Fahrzeuge sich bewegen.
+Außerem können, wie in Kapitel \ref{sec:vc} beschrieben, auch dynamische \textit{VCs} existieren, in denen die Fahrzeuge sich bewegen.
 Fahrzeuge werden währenddessen vermehrt auf Probleme treffen, die aufgrund ihres spontanen Auftretens nicht mit vordefinierten Ressourcen gelöst werden können.
 Dabei häufen sich meist mehrere Fahrzeuge, beispielsweise in Form eines Staus.
 Es muss eine zeitnahe Einschätzung der benötigten Ressourcen erfolgen und durch die Fahrzeuge vor Ort bereitgestellt werden.
 Diese Fähigkeit besitzt \textit{Cloud Computing} nicht.
-Im Folgenden werden drei zusätzliche Cloud-Dienste vorgestellt, die durch \textit{Vehicular Clouds} realisierbar sind\cite{conti2013mobile}.
+Im Folgenden werden drei zusätzliche Cloud-Dienste vorgestellt, die durch \textit{VCs} realisierbar sind\cite{conti2013mobile}.
 
 \subsection{\textit{Network as a Service (NaaS)}}
 Während manche Fahrzeuge während der Fahrt über eine Internetverbindung verfügen, muss dies nicht für alle Fahrzeuge der Fall sein.
@@ -548,8 +548,8 @@ Außerdem benötigt jedes Fahrzeug dazu ein mindestmaß an Bandbreite, wodurch e
 Um die so entstehenden Kosten gering zu halten, wurde das Konzept \textit{Cooperation as a Service (CaaS)} entwickelt.
 \textit{CaaS} setzt auf ein Publish-Subscribe-Muster, in dem Absender und Empfänger von Nachrichten ihr Interesse an Diensten mitteilen und daraufhin bei überschneidenden Interessen kooperieren, um alle für diesen Dienst notwendigen Informationen zu sammeln und auszutauschen.
 Das Netzwerk könnte dazu in mehrere \textit{Cluster}, welche respektiv für die Dienste sind, aufgeteilt werden.
-Für die Kommunikation zwischen den \textit{Clustern} wird \textit{Delay Tolerant Networking} genutzt, um nicht durch eine geringere Stabilität des Netzwerks aufgrund der neuen Herausforderungen von \textit{Vehicular Clouds} eingeschränkt zu werden.
-Für die Kommunikation innerhalb von \textit{Clustern} auf \textit{content-based routing} gesetzt, sodass Nachrichten mittels Überprüfung des Inhalts an die Fahrzeuge weitergeleitet werden kann, die sich dafür interessieren, ohne zuvor explizit die Empfänger festzulegen\cite{conti2013mobile}.
+Für die Kommunikation zwischen den \textit{Clustern} wird \textit{Delay Tolerant Networking} genutzt, um nicht durch eine geringere Stabilität des Netzwerks aufgrund der neuen Herausforderungen von \textit{VCs} eingeschränkt zu werden.
+Für die Kommunikation innerhalb von \textit{Clustern} wird auf \textit{content-based routing} gesetzt, sodass Nachrichten mittels Überprüfung des Inhalts an die Fahrzeuge weitergeleitet werden können, die sich dafür interessieren, ohne zuvor explizit die Empfänger festzulegen\cite{conti2013mobile}.
 
 \subsection{\textit{Storage as a Service (STaaS)}}
 Eine weitere Idee besteht darin, dass Fahrzeuge auch ihren Speicherplatz zur Verfügung stellen könnten.
@@ -568,11 +568,57 @@ Es lassen sich also sicherlich Anwendungsfälle für diesen Dienst finden, welch
 In diesem Kapitel werden Anwendungsbeispiele vorgestellt, um neue Möglichkeiten und Lösungen für bestehende Probleme mit \textit{Vehicular Clouds} zu verdeutlichen.
 Dazu werden sowohl Anwendungen mit stillstehenden Fahrzeugen, welche vermutlich einfacher umzusetzen sind, als auch Anwendungen mit Fahrzeugen in Bewegung betrachtet.
 
-\subsection{Beispiel 1}
+\subsection{Das Flughafenparkhaus als Rechenzentrum}
+Der Flughafen Düsseldorf verfügt über 18415 Parkplätze, von denen 8589 Langzeit-Parkplätze sind\cite{flugDuess}.
+Gehen wir nun lediglich von den Langzeit-Parkplätzen und einer durchschnittliche Belegung von ungefähr der Hälfte aus.
+Daraus ergibt sich, dass ungefähr 10000 Fahrzeuge ungenutzt am Flughafen herumstehen, während ihre Besitzer auf Reisen sind.
+Außerdem können wir davon ausgehen, dass fast jedes Fahrzeug aufgrund der Reisedauer mehrere Tage dort stehen wird.
+Da Abflug und Ankunft der Reisenden im Normalfall im Voraus geplant sind, lassen sich sogar die Einbindung und Trennung der einzelnen Fahrzeuge von der \textit{VC} vergleichsweise einfach organisieren.
+Mit zunehmenden Verkaufszahlen von Elektro- und Hybridfahrzeugen verbreitet sich auch die Ladeinfrastruktur.
+Beispielsweise verfügt der Flughafen Düsseldorf bereits in 3 der 11 Parkhäuser über Ladesäulen\cite{flugDuess}.
 
-\subsection{Beispiel 2}
+Die Idee besteht darin, dass die geparkten Fahrzeuge durch den Flughafen mit Strom und einer Internetverbindung versorgt werden.
+Im Austausch gegen kostenloses Parken erlaubt der Fahrzeugbesitzer die Teilnahme seines Fahrzeugs an der \textit{VC}.
+Hinsichtlich der üblich relativ hohen Kosten von Parkplätzen an Flughäfen und einer vollgeladenen Batterie bei Rückkehr des Fahrzeugbesitzers, im Falle von Elektrofahrzeugen, erscheint die Partizipation an der \textit{VC} sehr wahrscheinlich.
+Die Motivation der Flughäfen besteht darin, dass der Betrieb solch eines Rechenzentrums vermutlich wirtschaftlicher als der bisherige Betrieb der Parkhäuser wäre.
+Es erscheint daher logisch, dass in Zukunft die Ressourcen der Fahrzeuge gesammelt und für die Zwecke des Flughafens genutzt oder auch an Dritte vermietet werden\cite{conti2013mobile}.
 
-\subsection{Beispiel 3}
+\subsection{Dynamische Regelung des Verkehrs}
+Besonders bei Sport- und Kulturveranstaltung besteht spätestens bei Ende der Veranstaltung ein stark erhöhtes Verkehrsaufkommen.
+Rund um den Signal Iduna Park befinden sich beispielsweise ungefähr 10000 Parkplätze, welche teilweise ebenfalls als Parkmöglichkeiten für die sich daneben befindenden Messehallen dienen.
+Zusätzlich existieren an der TU Dortmund weitere Parkplätze, die mittels Shuttle-Bus erreichbar sind.
+Durchschnittlich alle zwei Wochen bei einem Heimspiel des Vereins Borussia Dortmund, zu dem über 80000 Zuschauer anreisen (ein Großteil per öffentlichem Nahverkehr), kommt es bereits Stunden vor Anpfiff zu einem erhöhten Verkehrsaufkommen in der Dortmunder Innenstadt und der direkten Umgebung des Stadions.
+Besonders nach Ende des Spiels ist das Verkehrsaufkommen so hoch, dass sowohl die anliegenden Bundesstraßen B1 und B54 als auch umliegende Straßen stundenlang durch Stau beeinträchtigt sind.
+Die Auflösung dieser Staus ist im Sinne aller Beteiligten, weshalb von der Bereitschaft der Teilnahme an einer \textit{VC} zur Lösung des Problems ausgegangen wird.
+
+Das Problem ist allerdings dynamisch und so komplex, dass eine herkömmliche Berechnung undenkbar ist.
+Bis diese erfolgt ist, kann die Situation sich bereits so verändert haben, dass die Berechnungen mittlerweile unbrauchbar geworden sind.
+Außerdem können diese Staus an den betroffenen Stellen in unterschiedlichem Maße auftreten, sodass eine vorherige Einschätzung der benötigten Ressourcen schwierig ist.
+Mit der \textit{VC} steht eine große Menge von Ressourcen in direkter Nähe des Problems bereit, welche im benötigten Maße zugewiesen werden kann und sofort bereitsteht.
+Ebenso können von den Fahrzeugen wahrgenommene Veränderungen der Situation direkt in die Berechnungen einfließen, um eine Ressourcenverschwendung zu verhindern\cite{conti2013mobile}.
+
+Dieses Beispiel lässt sich allerdings auch im täglichen Leben verwenden.
+Jeden Tag kommt es zu den Hauptverkehrszeiten, aufgrund von ähnlichen Arbeitszeiten, zu einem erhöhten Verkehrsaufkommen oder auch Staus auf unseren Straßen.
+Durch eine dynamische Regelung von Ampeln und Verkehrstelematik könnten diese mithilfe von Berechnungen und Sensordaten der Fahrzeuge in einer \textit{VC} aufgelöst oder zumindest vermindert werden.
+Dies wird besonders dadurch begünstig, dass die Fahrzeuge das Problem eigenständig lösen und sich nicht auf die Ressourcen Dritter verlassen und warten müssen\cite{conti2013mobile}.
+
+\subsection{Austausch von Informationen während der Fahrt}
+Ein weiterer Anwendungsfall besteht in dem Austausch von Informationen wie Straßenverhältnissen oder auch plötzlich auftretenden Ereignissen.
+Heutige Fahrzeuge verfügen über eine zunehmende Menge von Sensoren wie Kameras, \textit{LiDAR} oder auch Ultraschallsensoren, welche Assistenzsystemen zur Verbesserung der Fahrzeugsicherheit dienen.
+Deshalb kann es nützlich sein, wenn diese Informationen zwischen den Fahrzeugen ohne zusätzliche Infrastruktur geteilt werden würden\cite{conti2013mobile}.
+Ein Beispiel dafür ist das Auftreten eines Staus auf Autobahnen.
+Besonders bei schlechten Sichtverhältnissen übersehen Fahrer oft das Ende eines Staus, sodass es zu einem Auffahrunfall kommt.
+Dies könnte verhindert werden, indem die stehenden Fahrzeuge diese Information an alle anderen verteilen oder auch die Fahrzeuge, welche das Stauende wahrnehmen, die anderen Fahrzeuge über das vorausliegende Stauende warnen.
+Es muss allerdings nicht immer ein Stau sein, das Bremsen eines vorausfahrenden Fahrzeugs reicht bereits aus.
+Aktuell erkennt jedes Fahrzeug einzeln den Bremsvorgang des direkt vorausfahrenden Fahrzeugs und löst dann den Bremsassistenten aus.
+Diese Information könnte nun auf einfache Weise mit den Fahrzeugen dahinter geteilt werden, sodass diese bereits bei der Auslösung des Bremsassistenten des Vorausfahrenden reagieren können und dies nicht erst wahrnehmen müssen.
+Dadurch ließen sich besonders bei hohen Geschwindgikeiten viele Auffahrunfälle und somit auch dadurch entstehende Staus verhindern.
+
+Selbiges gilt für Informationen, die gar nicht oder zu spät durch das eigene Fahrzeuge erfasst werden können.
+Ist die Sicht auf ein herausziehendes Fahrzeug auf der Autobahn beispielsweise durch einen Kleintransporter auf der Mittelspur verdeckt, kann es zu einem gravierenden Unfall bei hoher Geschwindigkeit kommen.
+Diese Information kann sowohl durch das herausziehende Fahrzeug als auch durch den Kleintransporter, der diesen Spurwechsel wahrnimmt, bereitgestellt werden.
+Generell kann die Verwendung von \textit{VCs} den Verkehr auf unseren Straßen sicherer gestalten.
+
 % ----------------------------------------------------------------------------------------------------------------------
 \section{Sicherheit und Privatsphäre}
 \label{sec:securityprivacy}
