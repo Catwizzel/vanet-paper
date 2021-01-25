@@ -597,7 +597,7 @@ Außerdem können diese Staus an den betroffenen Stellen in unterschiedlichem Ma
 Mit der \textit{VC} steht eine große Menge von Ressourcen in direkter Nähe des Problems bereit, welche im benötigten Maße zugewiesen werden kann und sofort bereitsteht.
 Ebenso können von den Fahrzeugen wahrgenommene Veränderungen der Situation direkt in die Berechnungen einfließen, um eine Ressourcenverschwendung zu verhindern\cite{conti2013mobile}.
 
-Dieses Beispiel lässt sich allerdings auch im täglichen Leben verwenden.
+Dieses Beispiel lässt sich allerdings auch auf den Alltag anwenden.
 Jeden Tag kommt es zu den Hauptverkehrszeiten, aufgrund von ähnlichen Arbeitszeiten, zu einem erhöhten Verkehrsaufkommen oder auch Staus auf unseren Straßen.
 Durch eine dynamische Regelung von Ampeln und Verkehrstelematik könnten diese mithilfe von Berechnungen und Sensordaten der Fahrzeuge in einer \textit{VC} aufgelöst oder zumindest vermindert werden.
 Dies wird besonders dadurch begünstig, dass die Fahrzeuge das Problem eigenständig lösen und sich nicht auf die Ressourcen Dritter verlassen und warten müssen\cite{conti2013mobile}.
@@ -623,6 +623,59 @@ Generell kann die Verwendung von \textit{VCs} den Verkehr auf unseren Straßen s
 \section{Sicherheit und Privatsphäre}
 \label{sec:securityprivacy}
 
+Die Nutzung einer Menge von Ressourcen durch mehrere Nutzer weckt besonders zwei Bedenken, Sicherheit und Privatsphäre.
+Auf der einen Seite müssen die Sicherheit und Privatsphäre des Fahrzeuges und Fahrzeugsbesitzers gewahrt werden, welche die Ressourcen bereitstellen.
+Andererseits müssen auch die Sicherheit und Privatsphäre der Nutzer gewahrt werden.
+Dabei sind viele Herausforderungen und Lösungsmöglichkeiten aus anderen Netzen übertragbar.
+\textit{VCs} besitzen allerdings zusätzliche Herausforderungen, die beispielsweise aus der Mobilität der Fahrzeuge hervorgehen\cite{conti2013mobile}:
+\begin{itemize}
+\item Die Authentifizierung von Fahrzeugen und ihren Besitzern beziehungsweise Fahrern.
+\item Der Aufbau von Vertrauensbeziehungen zwischen den Knoten des Netzes.
+\item Die Skalierbarkeit der Sicherheitsmaßnahmen in Relation zur Skalierbarkeit der \textit{VC}.
+\item Die Position und Privatsphäre von Nutzern und Fahrzeugen muss gewahrt werden.
+\item Das Netz muss mit heterogenen Knoten aufgebaut werden können. (Die Technik in den Fahrzeugen wird aufgrund von Baujahr und Bauart auf unterschiedlichem Stand sein.)
+\end{itemize}
+Einige dieser Herausforderungen werden bereits durch den Einsatz von Virtualisierungstechniken gelöst.
+In diesem Zusammenhang bedeutet dies, dass die Hardware der Fahrzeuge koordiniert wird, um mehrere Betriebssysteme betreiben zu können.
+Währenddessen besitzt keines dieser Systeme Kenntnis von der Existenz der Anderen oder auch der Aufteilung der Ressourcen.
+Auf diese Weise können mehrere Systeme parallel auf der Hardware des Fahrzeugs betrieben werden und trotzdem die Sicherheit und Privatsphäre jedes einzelnen Systems gewahrt werden.
+Außerdem existieren einige Ideen zur Lösung dieser Probleme.
+Eine Idee bezüglich der Position von Fahrzeugen besteht darin, die Wahrnehmung anderer Fahrzeuge per Funk und Kamera zur gegenseitigen Verifikation zu nutzen.
+Zur Authentifizierung der Fahrzeuge kann auf die Public-Key-Infrastruktur \textit{(PKI)} zurückgegriffen werden, wie es bereits in \textit{VANETs} der Fall ist.
+Eine weitere Idee \textit{(GeoEncrypt)} besteht darin, auf die Geolokation des Fahrzeugs zur Generierung eines Schlüssels zurückzugreifen.
+Dadurch kann die Nachricht nur entschlüsselt werden, falls das Fahrzeug sich in an der korrekten Position befindet.
+Um die Privatsphäre der Nutzer bei der ständigen Kommunikation und Authentifikation von Fahrzeugen zu wahren, können Pseudonyme eingesetzt werden.
+Allerdings gestaltet sich die Aktualisierung der Pseudonyme aufgrund der hohen Mobilität der Fahrzeuge schwierig\cite{conti2013mobile}.
+
+\subsection{Bedrohungen in Vehicular Clouds}
+Herkömmlicherweise versuchen Angreifer in das Netz einzudringen, allerdings sind alle Nutzer der \textit{Vehicular Cloud} ein Teil des Netzes, sodass Angreifer nicht einfach ausgesperrt werden können.
+Im Folgenden werden Bedrohungen beschrieben, mit denen eine \textit{VC} umgehen können müsste\cite{conti2013mobile}:
+\begin{itemize}
+\item Verschleierung der Identität. Der Angreifer täuscht vor, ein anderer Nutzer zu sein, um Daten oder Vorteile zu erlangen, zu denen er nicht berechtigt ist.
+Ein Beispiel dafür ist der \textit{Man-in-the-Middle-Angriff}, bei dem sich der Angreifer A gegenüber als B ausgibt und B gegenüber als A ausgibt, um die Kommunikation zwischen A und B mitzuhören.
+\item Manipulation. Der Angreifer manipuliert Daten, ändert Nachrichten oder verschickt eigene Nachrichten.
+\item \textit{Repudiation}. Der Angreifer betreibt Manipulation mit der Identität eines anderen Nutzers, sodass die Manipulation auf den anderen Nutzer zurückzuführen ist.
+\item \textit{Information Disclosure}. Der Angreifer erlangt persönliche Informationen von Nutzern, wie der Wohnort, die Herkunft oder auch medizinische Informationen.
+\item \textit{Denial of Service (DoS)}. Der Nutzer versucht durch eine große Menge von gezielten Anfragen die Ressourcen der \textit{VC} zu belegen und somit die Erreichbarkeit anderer Nutzer einzuschränken.
+\item Rechteausweitung. Der Angreifer nutzt eine Schwachstelle aus, um seine Zugriffsrechte innerhalb der \textit{VC} zu erhöhen.
+Dadurch erlangt er Zugriff auf Daten und Ressourcen, die ihm sonst nicht zustehen würden.
+Solche Zugriffsrechte sind meist Administratoren oder auch Koordinatoren des Netzes zugewiesen.
+\end{itemize}
+
+\subsection{Bedingungen für eine sichere Vehicular Cloud}
+Folgende Bedingungen müssen gelten, um eine sichere Kommunikation in einer \textit{Vehicular Cloud} zu gewährleisten\cite{conti2013mobile}:
+\begin{itemize}
+\item Integrität. Nachrichten dürfen nicht modifiziert werden. Die Nachrichten müssen zuverlässig und korrekt sein.
+\item Vertraulichkeit. Unautorisierte Nutzer dürfen nicht auf sensible Nachrichten zugreifen.
+\item Verfügbarkeit. Nachrichten müssen verfügbar sein, wenn sie benötigt werden.
+\item Authentifizierung. Nachrichten müssen auf eine rechtmäßige Weise von autorisierten Knoten verschickt werden.
+Es werden sowohl der Absender als auch der Inhalt einer Nachricht authentifiziert.
+\item \textit{Anti-DoS}. Die \textit{VC} muss fähig sein einen \textit{DoS-Angriff} abzuwehren.
+\item Echtzeitfähigekit. Manche Anwendungen und Ereignisse, wie beispielsweise bei einem Unfall, sind zeitkritisch.
+Daher muss die \textit{VC} fähig sein, zeitkritische Nachrichten übertragen zu können.
+\item Privatsphäre. Die Privatsphäre der Nutzer muss gewahrt werden.
+\item Sybil-Attacken-frei. Nachrichten von nicht authentifizierten Nutzern dürfen nicht übertragen werden.
+\end{itemize}
 % ----------------------------------------------------------------------------------------------------------------------
 \section{Mögliche Architekturen}
 \label{sec:architectures}
