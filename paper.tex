@@ -623,7 +623,7 @@ Generell kann die Verwendung von \textit{VCs} den Verkehr auf unseren Straßen s
 \section{Sicherheit und Privatsphäre}
 \label{sec:securityprivacy}
 
-Die Nutzung einer Menge von Ressourcen durch mehrere Nutzer weckt besonders zwei Bedenken, Sicherheit und Privatsphäre.
+Die Nutzung einer Menge von Ressourcen durch mehrere Nutzer weckt im Besonderen zwei Bedenken, Sicherheit und Privatsphäre.
 Auf der einen Seite müssen die Sicherheit und Privatsphäre des Fahrzeuges und Fahrzeugsbesitzers gewahrt werden, welche die Ressourcen bereitstellen.
 Andererseits müssen auch die Sicherheit und Privatsphäre der Nutzer gewahrt werden.
 Dabei sind viele Herausforderungen und Lösungsmöglichkeiten aus anderen Netzen übertragbar.
@@ -677,17 +677,46 @@ Daher muss die \textit{VC} fähig sein, zeitkritische Nachrichten übertragen zu
 \item Sybil-Attacken-frei. Nachrichten von nicht authentifizierten Nutzern dürfen nicht übertragen werden.
 \end{itemize}
 % ----------------------------------------------------------------------------------------------------------------------
-\section{Mögliche Architekturen}
-\label{sec:architectures}
-
-\subsection{Statisch}
-
-\subsection{Dynamisch}
-% ----------------------------------------------------------------------------------------------------------------------
-\section{Ansätze für Aggregation von Ressourcen}
+\section{Virtualisierung}
 \label{sec:aggregation}
 
-\subsection{Virtualisierung}
+In Kapitel \ref{sec:securityprivacy} wurde bereits von Virutalisierung gesprochen, um einige Sicherheitsprobleme zu lösen.
+Im Folgenden sollen zwei Ansätze für die Verteilung der Ressourcen in \textit{Vehicular Clouds} erläutert werden.
+Dabei wird auf die Terminologie von \textit{Dedicated Short-Range Communications (DSRC)} zurückgegriffen.
+Die Rechenleistung eines Fahrzeugs wird mit dem Begriff \textit{On-Board-Unit (OBU)} bezeichnet.
+An der Straße befindliche Infrastruktur wird mit dem Begriff \textit{Roadside-Unit (RSU)} bezeichnet.
+Zusätzlich wird auf die Terminologie von \textit{Cloud Computing} zurückgegriffen, und zwar die drei Begriffe Knoten \textit{(Node)}, \textit{Cluster} und \textit{Cloud Controller}.
+Wie aus Kapitel \ref{sec:cc} bekannt, können damit \textit{IaaS-}, \textit{PaaS-} und \textit{SaaS-}Dienste angeboten werden.
+Die Mobilität des jeweiligen Fahrzeugs bestimmt dabei die verwendete Netzwerkinfrastruktur.
+Sich bewegende Fahrzeuge greifen zwangsläufig auf kabellose Kommunikation wie \textit{WiFi}, 5G oder auch \textit{DSRC} zurück, während stehende Fahrzeuge die Möglichkeit besitzen, mit einer Ethernet Verbindung ausgestattet zu werden.
+Die Architektur von \textit{CC} ist darauf ausgelegt, eine Mindestdatenrate von 1Gbits zu besitzen.
+Zusätzlich läuft der \textit{Node Controller} auf einem System mit Mehrkernprozessoren, Arbeitsspeicher mit hoher Dichte und teilweise sogar mehreren Prozessoren.
+Daher können die voraussichtlich geringen Hardware Spezifikationen der Fahrzeuge ein Problem darstellen.
+Somit ist es eventuell notwendig, mehrere \textit{OBUs} für den Betrieb einer Virtuellen Maschine (VM) zu bündeln\cite{conti2013mobile}.
+
+\subsection{Herkömmlicher Ansatz}
+Aktuelle Implemtierungen von Virtualisierung bauen, wie in Abbildung \ref{fig:fullVirtual} gezeigt, auf der Idee auf, dass eine sogenannte \textit{Hypervisor}-Software die VMs kontrolliert und ihnen die Ressourcen zuweist.
+Abbildung \ref{fig:obuVirtual} zeigt die nowtendigen Anpassungen für eine Verwendung in \textit{VCs}.
+Mehrere \textit{OBUs} werden gebündelt und der Datenfluss durch einen sogenannten \textit{Resource Scheduler (RS)} kontrolliert.
+Somit lassen sich die verfügbaren Ressourcen einer VM durch die Hinzunahme beziehungsweise Entfernung von \textit{OBUs} anpassen.
+Die Basisblöcke von CPU-Instruktionen würden durch den RS an die \textit{OBUs} verteilt werden.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{images/fullVirtual}
+\caption{Herkömmliche Virtualisierung\cite{conti2013mobile}}
+\label{fig:fullVirtual}
+\end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{images/obuVirtual}
+\caption{Angepasste Virtualisierung für \textit{Vehicular Clouds}\cite{conti2013mobile}}
+\label{fig:obuVirtual}
+\end{figure}
+
+Die durchschnittliche Datenrate von DDR4-Arbeitsspeicher liegt zwischen 2 und 3Gbits und somit eine Mindestanforderung für die Funktion einer \textit{VC}.
+Eine Datenrate von 40Gbits wäre notwendig, um eine 2Gbits Übertragung von Basisblöcken zu ermöglichen\cite{conti2013mobile}.
+Da die derzeit unterstützte Datenrate von \textit{DSRC} bei 27Gbits liegt, ist eine Umsetzung dieses Ansatzes momentan nicht erdenkbar\cite{advTrans2017}.
 
 \subsection{Lastverteilung}
 
@@ -725,5 +754,5 @@ Daher muss die \textit{VC} fähig sein, zeitkritische Nachrichten übertragen zu
 % Enfore empty line after bibliography
 \ \\
 %
-Alle Links wurden zuletzt am 14. Januar 2021 aufgerufen.
+Alle Links wurden zuletzt am 26. Januar 2021 aufgerufen.
 \end{document}
