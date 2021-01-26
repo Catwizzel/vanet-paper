@@ -463,7 +463,7 @@ Dadurch ergeben sich drei schwerwiegende Vorteile\cite{conti2013mobile}:
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=\textwidth]{images/cloudComputing}
+\includegraphics[width=0.7\textwidth]{images/cloudComputing}
 \caption{Unterschiede zwischen den Kategorien des \textit{Cloud Computing}\cite{azure}}
 \label{fig:ccCategories}
 \end{figure}
@@ -477,7 +477,7 @@ Wie in Abbildung \ref{fig:ccCategories} gezeigt lässt sich \textit{Cloud Comput
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=\textwidth]{images/cloudArchitecture}
+\includegraphics[width=0.7\textwidth]{images/cloudArchitecture}
 \caption{Die Eucalyptus Cloud Architektur.}
 \label{fig:ccArchitecture}
 \end{figure}
@@ -524,7 +524,7 @@ Deshalb kann das System auf Protokolle und Erkenntnisse traditioneller Mobiler A
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=\textwidth]{images/networkAAS}
+\includegraphics[width=0.7\textwidth]{images/networkAAS}
 \caption{Illustration einer NaaS-Anwendung.}
 \label{fig:NaaS}
 \end{figure}
@@ -569,6 +569,7 @@ In diesem Kapitel werden Anwendungsbeispiele vorgestellt, um neue Möglichkeiten
 Dazu werden sowohl Anwendungen mit stillstehenden Fahrzeugen, welche vermutlich einfacher umzusetzen sind, als auch Anwendungen mit Fahrzeugen in Bewegung betrachtet.
 
 \subsection{Das Flughafenparkhaus als Rechenzentrum}
+\label{sec:flughafen}
 Der Flughafen Düsseldorf verfügt über 18415 Parkplätze, von denen 8589 Langzeit-Parkplätze sind\cite{flugDuess}.
 Gehen wir nun lediglich von den Langzeit-Parkplätzen und einer durchschnittliche Belegung von ungefähr der Hälfte aus.
 Daraus ergibt sich, dass ungefähr 10000 Fahrzeuge ungenutzt am Flughafen herumstehen, während ihre Besitzer auf Reisen sind.
@@ -703,22 +704,50 @@ Die Basisblöcke von CPU-Instruktionen würden durch den RS an die \textit{OBUs}
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.6\textwidth]{images/fullVirtual}
+\includegraphics[width=0.5\textwidth]{images/fullVirtual}
 \caption{Herkömmliche Virtualisierung\cite{conti2013mobile}}
 \label{fig:fullVirtual}
 \end{figure}
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.6\textwidth]{images/obuVirtual}
+\includegraphics[width=0.5\textwidth]{images/obuVirtual}
 \caption{Angepasste Virtualisierung für \textit{Vehicular Clouds}\cite{conti2013mobile}}
 \label{fig:obuVirtual}
 \end{figure}
 
 Die durchschnittliche Datenrate von DDR4-Arbeitsspeicher liegt zwischen 2 und 3Gbits und somit eine Mindestanforderung für die Funktion einer \textit{VC}.
 Eine Datenrate von 40Gbits wäre notwendig, um eine 2Gbits Übertragung von Basisblöcken zu ermöglichen\cite{conti2013mobile}.
-Da die derzeit unterstützte Datenrate von \textit{DSRC} bei 27Gbits liegt, ist eine Umsetzung dieses Ansatzes momentan nicht erdenkbar\cite{advTrans2017}.
+Da die derzeit unterstützte Datenrate von \textit{DSRC} bei 27Gbits liegt, ist eine Umsetzung dieses Ansatzes momentan nicht denkbar\cite{advTrans2017}.
 
 \subsection{Lastverteilung}
+Ein weiterer Ansatz bietet sich besonders für Anwendungsfälle wie das in Kapitel \ref{sec:flughafen} vorgestellte Beispiel an.
+In Abbildung \ref{fig:loadBalance} wird der Aufbau des Lastverteilungs-Ansatzes dargestellt.
+Der \textit{Cluster Controller} befindet sich in diesem Fall auf den \textit{RSUs} und kommunziert mit den \textit{Node Controllern}, welche auf den \textit{OBUs} laufen.
+Bei der Ankunft neuer Fahrzeuge werden die \textit{OBUs} von einer \textit{Load Balancer}-Komponente des \textit{Cluster Controllers} registriert und einer VM zugewiesen.
+Der \textit{Load Balancer} speichert Informationen über die VMs wie die zugrundeliegenden \textit{OBUs}, IP und die angebotenen Dienste ab und weist eingehende Anfragen möglichst effizient den VMs zu.
+Dazu können Zufallsalgorithmen oder beispielsweise \textit{Round Robin} angewandt werden\cite{conti2013mobile}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{images/loadBalance}
+\caption{Load Balancing und Bildung von Virtuellen Maschinen\cite{conti2013mobile}}
+\label{fig:loadBalance}
+\end{figure}
+
+\subsubsection{Registrierung von Knoten}
+Bei der Ankunft eines neuen Fahrzeugs nimmt dieses die Kommunikation mit der nächsten \textit{RSU} auf.
+Daraufhin wird der \textit{Cluster Controller} den Knoten einer VM zuordnen und ein Image eines Betriebssystems an den \textit{Node Controller} senden.
+Dieses Image ist darauf angepasst, dass es den für die VM benötigten Dienst bereitstellen kann.
+Somit hängt die Bereitstellungsdauer des Dienstes von dem gewählten Kommunikationsweg und der Größe des Betriebssystems ab.
+Dieser Ansatz ermöglicht die Aufteilung eines Dienstes in kleinere Images, welche gemeinsam eine einzelne große VM bilden\cite{conti2013mobile}.
+
+\subsubsection{Abmeldung von Knoten}
+Wenn ein Fahrzeug den \textit{Cluster} verlässt, muss der \textit{Cluster Controller} sicherstellen, dass alle Anfragen weiterhin verarbeitet werden.
+Zusätzlich müssen die Antwortzeiten der Dienste, welche von der betroffenen VM bereitgestellt werden, in einem akzeptablen Maß bleiben.
+Dieser Vorgang beginnt mit dem Versand einer Nachricht durch das Fahrzeug an den \textit{Cluster Controller}, dass dieses Fahrzeug sich abmelden möchte.
+Daraufhin wird gewartet, ob sich ein neues Fahrzeug anmelden möchte.
+Sollte in dem zuvor festgelegten Zeitraum sich kein neues Fahrzeug anmelden, werden benachbarte \textit{Cluster Controller} gefragt, ob sie einen Ersatz bereitstellen können.
+Dabei muss sich der Ersatz allerdings in Kommunikationsreichweite des anfragenden \textit{Cluster Controllers} befinden\cite{conti2013mobile}.
 
 % ----------------------------------------------------------------------------------------------------------------------
 \section{Fazit und Ausblick}
