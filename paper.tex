@@ -377,21 +377,21 @@
   Der Fortschritt in der Kommunikationstechnik, wie die Einführung von 5G, hat in den letzten Jahren zu einem wachsenden Interesse an Kommunikation mit und zwischen Fahrzeugen geführt.
   Anfängliche Vorstellungen der zukünftigen Entwicklungen versprechen eine verstärkte Kommunikation zwischen den Fahrzeugen, welche durch den Austausch von Informationen über die Strassenverhältnisse oder andere verkehrsbezogene Gefahren zu einem sichereren Verkehr auf unseren Autobahnen und Straßen führt.
   Diese Aussicht führte zu einer vermehrten Ausstattung von Fahrzeugen mit Kommuniationstechnik und der Einführung von Verkehrstelematik (\textit{Intelligent Transportations Systems ITS})\cite{conti2013mobile}.
-  Ein Beispiel dafür sind an Autobahnen montierte Wechselverkehrszeichen, welche über Starßenverhältnisse informieren, flexible Geschwindigkeitsbegrenzungen ermöglichen oder auch die Öffnung und Schließung von Fahrspuren ankündigen.
-  Mithilfe dieser können beispielsweise bei einem Unfall die betroffenen Spuren gesperrt werden, um die Unfallstelle besonders bei nicht vorhandener Geschwindigkeitsbegrenzung frühzeitig zu sichern, oder auch in Hauptverkehrszeiten der Standstreifen als zusätzliche Fahrspur freigegeben werden.
+  Ein Beispiel dafür sind an Autobahnen montierte Wechselverkehrszeichen, welche über Straßenverhältnisse informieren, flexible Geschwindigkeitsbegrenzungen ermöglichen oder auch die Öffnung und Schließung von Fahrspuren ankündigen.
+  Mithilfe dieser können beispielsweise bei einem Unfall die betroffenen Spuren gesperrt werden, um die Unfallstelle, besonders bei nicht vorhandener Geschwindigkeitsbegrenzung, frühzeitig zu sichern, oder auch in Hauptverkehrszeiten der Standstreifen als zusätzliche Fahrspur freigegeben werden.
 
   In den Vereinigten Staaten von Amerika wurde durch die \textit{US Federal Communications Commission (FCC)} ein 75 MHz breites Spektrum im Bereich des 5.850- bis 5.925-GHz-Band für die Nutzung durch \textit{Dedicated Short-Range Communications (DSRC)} reserviert.
   Dies übertrifft die für die verkehrssichernde Kommunikation notwendigen Kapazitäten.
   Deshalb wird erwartet, dass Drittanbieter diese überflüssige Bandbreite nutzen, um eigene Anwendungen zu schaffen, welche den Verkehrsteilnehmern angeboten werden.
   Umgesetzt wurde dies bereits jetzt in Ortsbezogenen Anwendungen oder auch Unterhaltungsmedien.
   Ein Beispiel dafür ist die Integration von Spotify, YouTube und Netflix oder auch Videospielen in Fahrzeugen des Herstellers Tesla.
-  Mit der Verbreitung dieser Anwendungen wird auch von dem Ausbau der Infrastruktur entlang den Verkehrswege durch Drittanbieter und die Ausstattung von Fahrzeugen mit fähigerer Technik ausgegangen\cite{conti2013mobile}.
+  Mit der Verbreitung dieser Anwendungen wird von dem Ausbau der Infrastruktur entlang der Verkehrswege durch Drittanbieter und die Ausstattung von Fahrzeugen mit fähigerer Technik ausgegangen\cite{conti2013mobile}.
 
   Der aktuelle Stand der Technik in Fahrzeugen reagiert lediglich auf Ereignisse, welche durch die eigene Sensorik wahrgenommen werden und kann nur auf das eigene Fahrzeug einwirken.
-  Ziel ist es, dass diese Informationen und Ressourcen zwischen den Fahrzeugen geteilt werden, um gemeinsam ein Problem zu lösen, welches ohne Kooperation übermäßig lang zu lösen dauern würde (beispielsweise ein Stau) oder mit den begrenzten Ressourcen eines Fahrzeugs gar nicht lösbar wäre.
+  Ziel ist es, dass diese Informationen und Ressourcen zwischen den Fahrzeugen geteilt werden, um gemeinsam ein Problem zu lösen, welches ohne Kooperation übermäßig lang zu lösen dauern würde (beispielsweise die Auflösung eines Staus) oder mit den begrenzten Ressourcen eines einzelnen Fahrzeugs nicht lösbar wäre.
   Diese Ausarbeitung stellt das Konzept der \textit{Vehicular Clouds (VCs)} vor, welches die zwischen den Fahrzeugen bereits vorhandenen Netze ``in die Cloud bringt''\cite{conti2013mobile}.
-  Dazu wird zunächst in Kapitel \ref{sec:basics} auf einige Grundlagen eingegangen, welche das Konzept und nötiges Wissen vorstellen.
-  Daraufhin wird in Kapitel \ref{sec:ccvsvc} die \textit{Vehicular Cloud} vom herkömmlichen \textit{Cloud Computing} abgegrenzt, um die Notwendigkeit von Neuerungen und die entstehenden Herausforderungen zu verdeutlichen.
+  Dazu wird zunächst in Kapitel \ref{sec:basics} auf einige Grundlagen eingegangen, welche das Konzept vorstellen und dafür nötiges Wissen vermitteln.
+  Daraufhin wird in Kapitel \ref{sec:ccvsvc} die \textit{Vehicular Cloud} vom herkömmlichen Begriff \textit{Cloud Computing} abgegrenzt, um die Notwendigkeit von Neuerungen und die entstehenden Herausforderungen zu verdeutlichen.
   In Kapitel \ref{sec:examples} werden zur Darstellung der durch \textit{Vehicular Clouds} entstehenden Möglichkeiten Anwendungsbeispiele vorgestellt.
   Aufgrund der Verbindung der Systeme innerhalb eines Fahrzeugs und der Masse an Daten sind Sicherheit und Privatsphäre besonders wichtig.
   Diese Bedenken werden in Kapitel \ref{sec:securityprivacy} behandelt.
@@ -413,19 +413,19 @@ Ein Bordcomputer, ein GPS-Peilsender oder Navigationsgerät, eine Parkdistanzkon
 Ebenso befinden sich in einigen Oberklassemodellen bereits sogenannte \textit{Blackboxes}, welche ähnlich zu dem meist bekannten Einsatz in Flugzeugen eine Vielzahl von Fahrzeugdaten, wie die Umdrehungszahl des Motors oder auch ABS-Signale, speichern.
 Auf Grundlage dieser Daten lassen sich beispielsweise Rückschlüsse auf das Fahrverhalten des Fahrers oder auch die Straßenbedingungen vor einem Unfall schließen\cite{conti2013mobile}.
 
-Im Jahr 2015 erließ die Europäische Union beispielsweise eine Verordnung, welche die Fahrzeughersteller dazu verpflichtet ab 2018 ein sogenanntes eCall-System zu verbauen, welches zum Absetzen eines Notrufs im Falle eines Unfalls dient.
+Im Jahr 2015 erließ die Europäische Union eine Verordnung, welche die Fahrzeughersteller dazu verpflichtet, ab 2018 ein sogenanntes eCall-System zu verbauen, welches zum Absetzen eines Notrufs im Falle eines Unfalls dient.
 Dies gilt für alle neuen Fahrzeugmodelle, welche ab 2018 ihre Typgenehmigung erhalten sollen, um somit auf dem Europäischen Markt verkauft und angemeldet werden zu dürfen\cite{euECall}.
 Ebenso testete der Allgemeine Deutsche Automobil-Club (ADAC) im Jahr 2020 zwei Fahrzeugmodelle unterschiedlicher Hersteller hinsichtlich des Sammelns von Daten.
 Bei einer Mercedes B-Klasse mit der Typbezeichnung W246 (2011-2018)  wurde festgestellt, dass ungefähr alle zwei Minuten die GPS-Position des Fahrzeugs, Kilometerstand, Tankfüllung, Reifendruck und weitere Informationen an Mercedes übertragen werden.
 Zusätzlich verfügt das Fahrzeug über einen elektromotorischen Gurtstraffer, welcher zum Beispiel bei starken Bremsungen auslöst, um die Insassen zu fixieren.
 Die Anzahl der Auslösungen des Gurtstraffers werden gespeichert und lassen somit Rückschlüsse auf die Fahrweise zu.
-Ebenso werden Fehlerspeicher-Einträge mit Informationen über die Motordrehzahl und Motortemperatur abgelegt, um auch Rückschlüsse auf die Fahrweise zu geben.
-Außerdem werden Daten in unterschiedlichen Fahrprofilen für Autobahn-, Überland-, und Stadtfahrten gespeichert und durch weitere Aufzeichnungen Fahr- und Standzeiten festgehalten\cite{adacDaten}.
+Ebenso werden Fehlerspeicher-Einträge mit Informationen über die Motordrehzahl und Motortemperatur abgelegt, um Rückschlüsse auf die Fahrweise zu geben.
+Außerdem werden die Daten in unterschiedlichen Fahrprofilen für Autobahn-, Überland-, und Stadtfahrten gespeichert und durch weitere Aufzeichnungen Fahr- und Standzeiten festgehalten\cite{adacDaten}.
 Das Speichern dieser Informationen und besonders der Versand von Teilen dieser Informationen an Dritte birgt die Frage, wie sicher und privat diese Daten sind und ob sie eventuell missbraucht werden.
 
-Aufgrund der Zunahme an Sensorik und Datenverarbeitung wachsen auch die Ansprüche an die verbaute Technik und somit die verfügbare Prozessorleistung der Fahrzeuge.
-Ebenso verbreiten sich Fahrzeuge mit Elektroantrieb oder Hybriden Antrieben stetig weiter.
-Dadurch werden neue Möglichkeiten eröffnet, da solche Fahrzeuge im Vergleich zu Verbrennern über immens größere Batteriekapazitäten verfügen und somit über längerem Zeitraum ihre Prozessorleistung bereitstellen können\cite{conti2013mobile}.
+Aufgrund der Zunahme an Sensorik und Datenverarbeitung wachsen auch die Ansprüche an die verbaute Technik und somit die verfügbare Rechenleistung der Fahrzeuge.
+Ebenso verbreiten sich Fahrzeuge mit Elektro- und Hybriden Antrieben stetig weiter.
+Dadurch werden neue Möglichkeiten eröffnet, da solche Fahrzeuge im Vergleich zu Verbrennern über immens größere Batteriekapazitäten verfügen und somit über einen längeren Zeitraum ihre Rechenleistung bereitstellen können\cite{conti2013mobile}.
 
 \subsection{Fahrzeug-Ad-hoc-Netze}
 Das Auftreten von Stau hat sich in den letzten Jahren besonders in Ballungsgebieten zu einem stetigen Problem entwickelt.
@@ -449,9 +449,9 @@ Diese Entwicklungen lassen uns auf eine Revolution des Straßenverkehrs hoffen, 
 \label{sec:cc}
 Im Allgemeinen wird der Begriff \textit{Cloud Computing} als Synonym für über das Internet bereitgestellte Gehostete Dienste genutzt.
 Genauer genommen wird damit ein Modell bezeichnet, welches Ressourcen zeitnah und ohne Eingriff des Bereitstellers zur Verfügung stellt.
-Solche Ressourcen sind beispielsweise Bandbreite, Arbeitsspeicher, Prozessierleistung oder auch Speicher.
-\textit{Cloud Computing} hat sich als eigenes Geschäftsfeld etabliert, da mittlerweile ein relativ günstiger Highspeed-Internetzugang möglich ist und aktuelle Technik effiziente Virtualisierung ermöglicht.
-Dadurch ist es besonders für kleine Unternehmen oft wirtschaftlich, auf Drittanbieter zurückzugreifen anstatt eigene Infrastruktur aufzubauen.
+Solche Ressourcen sind beispielsweise Bandbreite, Arbeitsspeicher, Rechenleistung oder auch Speicher.
+\textit{Cloud Computing} hat sich als eigenes Geschäftsfeld etabliert, da mittlerweile ein relativ günstiger Highspeed-Internetzugang möglich ist und die aktuelle Technik eine effiziente Virtualisierung ermöglicht.
+Dadurch ist es besonders für kleine Unternehmen oft wirtschaftlich, auf Drittanbieter zurückzugreifen, anstatt eigene Infrastruktur aufzubauen.
 Dies erübrigt zusätzlich die Notwendigkeit von Angestellten, welche die eigene Infrastruktur bedienen und warten können müssten.
 \textit{Cloud IT services} erweitern dieses Modell um Anwendungen und Dienste, sodass Nutzer mit minimalem Aufwand ihre benötigten Ressourcen skalieren können.
 Dadurch ergeben sich drei schwerwiegende Vorteile\cite{conti2013mobile}:
@@ -470,9 +470,9 @@ Dadurch ergeben sich drei schwerwiegende Vorteile\cite{conti2013mobile}:
 
 Wie in Abbildung \ref{fig:ccCategories} gezeigt lässt sich \textit{Cloud Computing} in folgende drei Kategorien unterteilen\cite{conti2013mobile}:
 \begin{itemize}
-\item[1.] \textit{Infrastructure as a Service (IaaS)}. Dem Nutzer werden Ressourcen wie Prozessierleistung, Speicher und Bandbreite bereitgestellt. Ein Beispiel dafür sind die \textit{Amazon Web Services (AWS)}.
-\item[2.] \textit{Platform as aService (PaaS)}. Dem Nutzer werden zusätzlich Entwicklerwerkzeuge zur Verfügung gestellt, um Webanwendungen ohne lokale Installation entwickeln zu können. \textit{Microsoft Azure} ist ein Beispiel für diese Kategorie.
-\item[3.] \textit{Software as aService (SaaS)}. Dem Nutzer wird die Verwendung einer Anwendung per Abonnement gestattet, sodass kostspielige Software zeitweise zu einem geringeren Preis genutzt werden kann. Ein Beispiel für diese Kategorie sind \textit{Microsoft 365} oder auch die \textit{Adobe Creative Cloud}.
+\item[1.] \textit{Infrastructure as a Service (IaaS)}. Dem Nutzer werden Ressourcen wie Rechenleistung, Speicher und Bandbreite bereitgestellt. Ein Beispiel dafür sind die \textit{Amazon Web Services (AWS)}.
+\item[2.] \textit{Platform as a Service (PaaS)}. Dem Nutzer werden zusätzlich Entwicklerwerkzeuge zur Verfügung gestellt, um Webanwendungen ohne lokale Installation entwickeln und betreiben zu können. \textit{Microsoft Azure} ist ein Beispiel für diese Kategorie.
+\item[3.] \textit{Software as a Service (SaaS)}. Dem Nutzer wird die Verwendung einer Anwendung per Abonnement gestattet, sodass kostspielige Software zeitweise genutzt werden kann. Dies kann günstiger als eine Eigenentwicklung oder auch ein permanenter Erwerb der Software sein. Ein Beispiel für diese Kategorie sind \textit{Microsoft 365} oder auch die \textit{Adobe Creative Cloud}.
 \end{itemize}
 
 \begin{figure}[h]
@@ -493,7 +493,7 @@ Kapitel \ref{sec:cc} hat gezeigt, dass durch \textit{Cloud Computing} weniger un
 Zusätzlich ist bekannt, dass Fahrzeuge die meiste Zeit ungenutzt auf Parkplätzen, in Garagen oder am Straßenrand stehen und somit ihre Ressourcen verschwendet werden.
 Dadurch erscheint es logisch, dass das Interesse entsteht, dieses Prinzip auch auf Fahrzeuge anzuwenden.
 Ein Fahrzeug würde im Zusammenhang des \textit{Cloud Computing} also einen Knoten (\textit{Node}) darstellen.
-Allerdings unterscheiden sich Fahrzeuge zu konventionellen Knoten insofern, dass sie nicht nur stehen, sondern sich auch bewegen können und daher über keinen festen Zugang zum Netzwerk verfügen.
+Allerdings unterscheiden sich Fahrzeuge zu konventionellen Knoten insofern, dass sie nicht nur stehen, sondern sich auch bewegen können und daher über keinen festen Zugang zum Netzwerk und einer Stromversorgung verfügen.
 Beispielsweise müsste ein Fahrzeug bei der Verwendung des 5G Netzwerks während der Fahrt mehrfach den Sendemasten wechseln, um weiterhin kommunizieren zu können.
 
 Es wird davon ausgegangen, dass Fahrzeugbesitzer durch eine Entschädigung dazu angespornt werden könnten, die Ressourcen ihres Fahrzeugs zur Verfügung zu stellen.
@@ -503,7 +503,7 @@ Mit diesen Ressourcen könnten Berechnungen zur Auflösung eines Staus angestell
 \section{Cloud Computing und Vehicular Clouds: Worin liegt der Unterschied?}
 \label{sec:ccvsvc}
 Oberflächlich betrachtet weichen statische \textit{Vehicular Clouds} nicht vom herkömmlichen \textit{Cloud Computing} ab.
-Genauer betrachtet existierenden allerdings zusätzliche Herausforderungen, wie beispielsweise eine limitierte Stromversorgung.
+Genauer betrachtet existieren allerdings zusätzliche Herausforderungen, wie beispielsweise eine limitierte Stromversorgung.
 Außerem können, wie in Kapitel \ref{sec:vc} beschrieben, auch dynamische \textit{VCs} existieren, in denen die Fahrzeuge sich bewegen.
 Fahrzeuge werden währenddessen vermehrt auf Probleme treffen, die aufgrund ihres spontanen Auftretens nicht mit vordefinierten Ressourcen gelöst werden können.
 Dabei häufen sich meist mehrere Fahrzeuge, beispielsweise in Form eines Staus.
@@ -514,7 +514,7 @@ Im Folgenden werden drei zusätzliche Cloud-Dienste vorgestellt, die durch \text
 \subsection{\textit{Network as a Service (NaaS)}}
 Während manche Fahrzeuge während der Fahrt über eine Internetverbindung verfügen, muss dies nicht für alle Fahrzeuge der Fall sein.
 Es bietet sich für zuerst genannte Fahrzeuge an, ihre Internetverbindung den anderen Fahrzeugen zur Verfügung zu stellen.
-Vergleicht man diesen Anwendungsfall mit der Nutzung von Smartphones, wird einem klar, dass in Zukunft vermutlich sämtliche Fahrzeuge über eine Internetverbindung per Mobilfunk oder WiFi verfügen.
+Vergleicht man diesen Anwendungsfall mit der Nutzung von Smartphones, wird einem klar, dass in der Zukunft vermutlich sämtliche Fahrzeuge über eine Internetverbindung per Mobilfunk oder WiFi verfügen werden.
 Doch selbst dann bietet sich dieser Dienst an, da Fahrzeuge ihre überschüssige Bandbreite zur Verfügung stellen können, falls diese von anderen Fahrzeugen für beispielsweise Unterhaltungsanwendungen benötgt wird.
 Es wird davon ausgegangen, dass die Bereitschaft die Bandbreite zur Verfügung zu stellen durch die jeweiligen Fahrzeuge verbreitet wird.
 Diese Information könnte von anderen Fahrzeugen transient weitergegeben werden, um sich als Knoten zwischen dem bereitstellenden und dem anfordernden Fahrzeug anzubieten.
@@ -531,12 +531,12 @@ Deshalb kann das System auf Protokolle und Erkenntnisse traditioneller Mobiler A
 
 Abbildung \ref{fig:NaaS} stellt solch eine Situation auf einer dreispurigen Autobahn beispielhaft dar.
 Neben der Autobahn befindet sich ein Zugangspunkt \textbf{w}, welcher mittels WiFi eine Internetverbindung bereitstellt.
-Das Fahrzeug \textbf{e} befindet sich in direkter Nähe zum \textbf{w} und kann somit diese Internetverbindung transient zur Verfügung stellen.
+Das Fahrzeug \textbf{e} befindet sich in direkter Nähe zum Zugangspunkt \textbf{w} und kann somit diese Internetverbindung transient zur Verfügung stellen.
 Außerdem verfügen die Fahrzeuge \textbf{a} und \textbf{d} über 5G.
 Die Fahrzeuge \textbf{a}, \textbf{d} und \textbf{e} werden diese Information regelmäßig an die Fahrzeuge in ihrer Nähe senden.
 Sollte sich nun also beispielsweise Fahrzeug \textbf{c} dazu entscheiden, eine Internetverbindung herstellen zu wollen, kann es anhand mehrerer Parameter abschätzen, welches Angebot am besten zu seinem Anwendungszweck passt.
 Solche Parameter sind beispielsweise die relative Geschwindigkeit zwischen den Fahrzeugen, die Stabilität der Verbindung, die Verbindungsgeschwindigkeit oder auch die voraussichtliche Nutzungsdauer der Verbindung.
-Falls Fahrzeug \textbf{c} eine kleine Nachricht, wie eine Mail, versenden möchte oder auch eine kleine Datei herunterladen möchte, wäre es sinnvoll die Verbindung über Fahrzeug \textbf{e} zu dem Zugangspunkt \textbf{e} zu nutzen, da eine hohe Verbindungsgeschwindigkeit und eine voraussichtlich niedrige Verbindungsdauer vorliegen.
+Falls Fahrzeug \textbf{c} eine kleine Nachricht, wie eine Mail, versenden möchte oder auch eine kleine Datei herunterladen möchte, wäre es sinnvoll die Verbindung über Fahrzeug \textbf{e} zu dem Zugangspunkt \textbf{w} zu nutzen, da eine hohe Verbindungsgeschwindigkeit und eine voraussichtlich niedrige Verbindungsdauer vorliegen.
 Ist allerdings die Stabilität der Verbindung essenziell oder die voraussichtliche Dauer der Verbindung länger, wie bei einem Videotelefonat, bietet sich eine Verbindung zu Fahrzeug \textbf{a} oder \textbf{d} eher an\cite{conti2013mobile}.
 
 \subsection{\textit{Cooperation as a Service (CaaS)}}
@@ -559,7 +559,7 @@ Es wird ebenso davon ausgegangen, dass Fahrzeuge aufgrund von zunehmend geringer
 Diesem Punkt kann ich allerdings nicht vollkommen zustimmen, da in der Automobilbranche bei Zulieferern bereits geringe Preisunterschiede ausschlaggebend sind.
 Deshalb werden aufgrund der Produktionsmenge die Fahrzeuge vermutlich nicht mit übermäßigen Speicherkapazitäten ausgestattet sein.
 Eine zusätzliche Herausforderung besteht darin, dass die Fahrzeuge sich vermutlich voneinander entfernen, bevor der Nutzen des Dienstes eingetreten ist.
-Je nach Anwendungsfall könnte allerdings selbst dann der Zugriff auf die gespeicherten Informationen per Internet erfolgen.
+Je nach Anwendungsfall könnte allerdings selbst dann ein Zugriff auf die gespeicherten Informationen per Internet erfolgen.
 Es lassen sich also sicherlich Anwendungsfälle für diesen Dienst finden, welche trotz dieser Herausforderung einen Nutzen bieten.
 
 % ----------------------------------------------------------------------------------------------------------------------
