@@ -565,14 +565,14 @@ Es lassen sich also sicherlich Anwendungsfälle für diesen Dienst finden, welch
 % ----------------------------------------------------------------------------------------------------------------------
 \section{Anwendungsbeispiele}
 \label{sec:examples}
-In diesem Kapitel werden Anwendungsbeispiele vorgestellt, um neue Möglichkeiten und Lösungen für bestehende Probleme mit \textit{Vehicular Clouds} zu verdeutlichen.
+In diesem Kapitel werden Anwendungsbeispiele behandelt, um neue Möglichkeiten und Lösungen für bestehende Probleme mit \textit{Vehicular Clouds} vorzustellen.
 Dazu werden sowohl Anwendungen mit stillstehenden Fahrzeugen, welche vermutlich einfacher umzusetzen sind, als auch Anwendungen mit Fahrzeugen in Bewegung betrachtet.
 
 \subsection{Das Flughafenparkhaus als Rechenzentrum}
 \label{sec:flughafen}
 Der Flughafen Düsseldorf verfügt über 18415 Parkplätze, von denen 8589 Langzeit-Parkplätze sind\cite{flugDuess}.
 Gehen wir nun lediglich von den Langzeit-Parkplätzen und einer durchschnittliche Belegung von ungefähr der Hälfte aus.
-Daraus ergibt sich, dass ungefähr 10000 Fahrzeuge ungenutzt am Flughafen herumstehen, während ihre Besitzer auf Reisen sind.
+Daraus ergibt sich, dass ungefähr 5000 Fahrzeuge ungenutzt am Flughafen stehen, während ihre Besitzer auf Reisen sind.
 Außerdem können wir davon ausgehen, dass fast jedes Fahrzeug aufgrund der Reisedauer mehrere Tage dort stehen wird.
 Da Abflug und Ankunft der Reisenden im Normalfall im Voraus geplant sind, lassen sich sogar die Einbindung und Trennung der einzelnen Fahrzeuge von der \textit{VC} vergleichsweise einfach organisieren.
 Mit zunehmenden Verkaufszahlen von Elektro- und Hybridfahrzeugen verbreitet sich auch die Ladeinfrastruktur.
@@ -615,19 +615,19 @@ Aktuell erkennt jedes Fahrzeug einzeln den Bremsvorgang des direkt vorausfahrend
 Diese Information könnte nun auf einfache Weise mit den Fahrzeugen dahinter geteilt werden, sodass diese bereits bei der Auslösung des Bremsassistenten des Vorausfahrenden reagieren können und dies nicht erst wahrnehmen müssen.
 Dadurch ließen sich besonders bei hohen Geschwindgikeiten viele Auffahrunfälle und somit auch dadurch entstehende Staus verhindern.
 
-Selbiges gilt für Informationen, die gar nicht oder zu spät durch das eigene Fahrzeuge erfasst werden können.
+Selbiges gilt für Informationen, die gar nicht oder zu spät durch das eigene Fahrzeug erfasst werden können.
 Ist die Sicht auf ein herausziehendes Fahrzeug auf der Autobahn beispielsweise durch einen Kleintransporter auf der Mittelspur verdeckt, kann es zu einem gravierenden Unfall bei hoher Geschwindigkeit kommen.
 Diese Information kann sowohl durch das herausziehende Fahrzeug als auch durch den Kleintransporter, der diesen Spurwechsel wahrnimmt, bereitgestellt werden.
-Generell kann die Verwendung von \textit{VCs} den Verkehr auf unseren Straßen sicherer gestalten.
+Generell kann der Austausch von Informationen innerhalb einer \textit{VC} den Verkehr auf unseren Straßen sicherer gestalten.
 
 % ----------------------------------------------------------------------------------------------------------------------
 \section{Sicherheit und Privatsphäre}
 \label{sec:securityprivacy}
 
 Die Nutzung einer Menge von Ressourcen durch mehrere Nutzer weckt im Besonderen zwei Bedenken, Sicherheit und Privatsphäre.
-Auf der einen Seite müssen die Sicherheit und Privatsphäre des Fahrzeuges und Fahrzeugsbesitzers gewahrt werden, welche die Ressourcen bereitstellen.
+Auf der einen Seite müssen die Sicherheit und Privatsphäre des Fahrzeugs und Fahrzeugbesitzers gewahrt werden, welche die Ressourcen bereitstellen.
 Andererseits müssen auch die Sicherheit und Privatsphäre der Nutzer gewahrt werden.
-Dabei sind viele Herausforderungen und Lösungsmöglichkeiten aus anderen Netzen übertragbar.
+Dabei sind einige Herausforderungen und Lösungsmöglichkeiten aus anderen Netzen übertragbar.
 \textit{VCs} besitzen allerdings zusätzliche Herausforderungen, die beispielsweise aus der Mobilität der Fahrzeuge hervorgehen\cite{conti2013mobile}:
 \begin{itemize}
 \item Die Authentifizierung von Fahrzeugen und ihren Besitzern beziehungsweise Fahrern.
@@ -644,21 +644,21 @@ Außerdem existieren einige Ideen zur Lösung dieser Probleme.
 Eine Idee bezüglich der Position von Fahrzeugen besteht darin, die Wahrnehmung anderer Fahrzeuge per Funk und Kamera zur gegenseitigen Verifikation zu nutzen.
 Zur Authentifizierung der Fahrzeuge kann auf die Public-Key-Infrastruktur \textit{(PKI)} zurückgegriffen werden, wie es bereits in \textit{VANETs} der Fall ist.
 Eine weitere Idee \textit{(GeoEncrypt)} besteht darin, auf die Geolokation des Fahrzeugs zur Generierung eines Schlüssels zurückzugreifen.
-Dadurch kann die Nachricht nur entschlüsselt werden, falls das Fahrzeug sich in an der korrekten Position befindet.
+Dadurch kann die Nachricht nur entschlüsselt werden, falls das Fahrzeug sich an der korrekten Position befindet.
 Um die Privatsphäre der Nutzer bei der ständigen Kommunikation und Authentifikation von Fahrzeugen zu wahren, können Pseudonyme eingesetzt werden.
 Allerdings gestaltet sich die Aktualisierung der Pseudonyme aufgrund der hohen Mobilität der Fahrzeuge schwierig\cite{conti2013mobile}.
 
 \subsection{Bedrohungen in Vehicular Clouds}
-Herkömmlicherweise versuchen Angreifer in das Netz einzudringen, allerdings sind alle Nutzer der \textit{Vehicular Cloud} ein Teil des Netzes, sodass Angreifer nicht einfach ausgesperrt werden können.
-Im Folgenden werden Bedrohungen beschrieben, mit denen eine \textit{VC} umgehen können müsste\cite{conti2013mobile}:
+Herkömmlicherweise versuchen Angreifer in das Netz einzudringen, allerdings sind alle Nutzer der \textit{Vehicular Cloud} ein Teil des Netzes, sodass sich eine Aussperrung der Angreifer schwierig gestaltet.
+Im Folgenden werden Bedrohungen beschrieben, mit denen eine \textit{VC} umgehen können muss\cite{conti2013mobile}:
 \begin{itemize}
-\item Verschleierung der Identität. Der Angreifer täuscht vor, ein anderer Nutzer zu sein, um Daten oder Vorteile zu erlangen, zu denen er nicht berechtigt ist.
+\item \textit{Verschleierung der Identität}. Der Angreifer täuscht vor, ein anderer Nutzer zu sein, um Daten oder Vorteile zu erlangen, zu denen er nicht berechtigt ist.
 Ein Beispiel dafür ist der \textit{Man-in-the-Middle-Angriff}, bei dem sich der Angreifer A gegenüber als B ausgibt und B gegenüber als A ausgibt, um die Kommunikation zwischen A und B mitzuhören.
-\item Manipulation. Der Angreifer manipuliert Daten, ändert Nachrichten oder verschickt eigene Nachrichten.
+\item \textit{Manipulation}. Der Angreifer manipuliert Daten, ändert Nachrichten oder verschickt eigene Nachrichten.
 \item \textit{Repudiation}. Der Angreifer betreibt Manipulation mit der Identität eines anderen Nutzers, sodass die Manipulation auf den anderen Nutzer zurückzuführen ist.
 \item \textit{Information Disclosure}. Der Angreifer erlangt persönliche Informationen von Nutzern, wie der Wohnort, die Herkunft oder auch medizinische Informationen.
-\item \textit{Denial of Service (DoS)}. Der Nutzer versucht durch eine große Menge von gezielten Anfragen die Ressourcen der \textit{VC} zu belegen und somit die Erreichbarkeit anderer Nutzer einzuschränken.
-\item Rechteausweitung. Der Angreifer nutzt eine Schwachstelle aus, um seine Zugriffsrechte innerhalb der \textit{VC} zu erhöhen.
+\item \textit{Denial of Service (DoS)}. Der Angreifer versucht durch eine große Menge von gezielten Anfragen die Ressourcen der \textit{VC} zu belegen und somit die Erreichbarkeit für andere Nutzer einzuschränken.
+\item \textit{Rechteausweitung}. Der Angreifer nutzt eine Schwachstelle aus, um seine Zugriffsrechte innerhalb der \textit{VC} zu erhöhen.
 Dadurch erlangt er Zugriff auf Daten und Ressourcen, die ihm sonst nicht zustehen würden.
 Solche Zugriffsrechte sind meist Administratoren oder auch Koordinatoren des Netzes zugewiesen.
 \end{itemize}
@@ -666,16 +666,16 @@ Solche Zugriffsrechte sind meist Administratoren oder auch Koordinatoren des Net
 \subsection{Bedingungen für eine sichere Vehicular Cloud}
 Folgende Bedingungen müssen gelten, um eine sichere Kommunikation in einer \textit{Vehicular Cloud} zu gewährleisten\cite{conti2013mobile}:
 \begin{itemize}
-\item Integrität. Nachrichten dürfen nicht modifiziert werden. Die Nachrichten müssen zuverlässig und korrekt sein.
-\item Vertraulichkeit. Unautorisierte Nutzer dürfen nicht auf sensible Nachrichten zugreifen.
-\item Verfügbarkeit. Nachrichten müssen verfügbar sein, wenn sie benötigt werden.
-\item Authentifizierung. Nachrichten müssen auf eine rechtmäßige Weise von autorisierten Knoten verschickt werden.
+\item \textit{Integrität}. Nachrichten dürfen nicht modifiziert werden. Die Nachrichten müssen zuverlässig und korrekt sein.
+\item \textit{Vertraulichkeit}. Unautorisierte Nutzer dürfen nicht auf sensible Nachrichten zugreifen.
+\item \textit{Verfügbarkeit}. Nachrichten müssen verfügbar sein, wenn sie benötigt werden.
+\item \textit{Authentifizierung}. Nachrichten müssen auf eine rechtmäßige Weise von autorisierten Knoten verschickt werden.
 Es werden sowohl der Absender als auch der Inhalt einer Nachricht authentifiziert.
 \item \textit{Anti-DoS}. Die \textit{VC} muss fähig sein einen \textit{DoS-Angriff} abzuwehren.
-\item Echtzeitfähigekit. Manche Anwendungen und Ereignisse, wie beispielsweise bei einem Unfall, sind zeitkritisch.
+\item \textit{Echtzeitfähigekit}. Manche Anwendungen und Ereignisse, wie beispielsweise bei einem Unfall, sind zeitkritisch.
 Daher muss die \textit{VC} fähig sein, zeitkritische Nachrichten übertragen zu können.
-\item Privatsphäre. Die Privatsphäre der Nutzer muss gewahrt werden.
-\item Sybil-Attacken-frei. Nachrichten von nicht authentifizierten Nutzern dürfen nicht übertragen werden.
+\item \textit{Privatsphäre}. Die Privatsphäre der Beteiligten muss gewahrt werden.
+\item \textit{Sybil-Attacken-frei}. Nachrichten von nicht authentifizierten Nutzern dürfen nicht übertragen werden.
 \end{itemize}
 % ----------------------------------------------------------------------------------------------------------------------
 \section{Virtualisierung}
@@ -683,10 +683,10 @@ Daher muss die \textit{VC} fähig sein, zeitkritische Nachrichten übertragen zu
 
 In Kapitel \ref{sec:securityprivacy} wurde bereits von Virutalisierung gesprochen, um einige Sicherheitsprobleme zu lösen.
 Im Folgenden sollen zwei Ansätze für die Verteilung der Ressourcen in \textit{Vehicular Clouds} erläutert werden.
-Dabei wird auf die Terminologie von \textit{Dedicated Short-Range Communications (DSRC)} zurückgegriffen.
+Dabei wird auf die Terminologie von \textit{Dedicated Short-Range Communication (DSRC)} zurückgegriffen.
 Die Rechenleistung eines Fahrzeugs wird mit dem Begriff \textit{On-Board-Unit (OBU)} bezeichnet.
 An der Straße befindliche Infrastruktur wird mit dem Begriff \textit{Roadside-Unit (RSU)} bezeichnet.
-Zusätzlich wird auf die Terminologie von \textit{Cloud Computing} zurückgegriffen, und zwar die drei Begriffe Knoten \textit{(Node)}, \textit{Cluster} und \textit{Cloud Controller}.
+Zusätzlich wird auf die Terminologie von \textit{Cloud Computing} zurückgegriffen, und zwar die drei Begriffe \textit{Node-}, \textit{Cluster-} und \textit{Cloud Controller}.
 Wie aus Kapitel \ref{sec:cc} bekannt, können damit \textit{IaaS-}, \textit{PaaS-} und \textit{SaaS-}Dienste angeboten werden.
 Die Mobilität des jeweiligen Fahrzeugs bestimmt dabei die verwendete Netzwerkinfrastruktur.
 Sich bewegende Fahrzeuge greifen zwangsläufig auf kabellose Kommunikation wie \textit{WiFi}, 5G oder auch \textit{DSRC} zurück, während stehende Fahrzeuge die Möglichkeit besitzen, mit einer Ethernet Verbindung ausgestattet zu werden.
@@ -696,11 +696,11 @@ Daher können die voraussichtlich geringen Hardware Spezifikationen der Fahrzeug
 Somit ist es eventuell notwendig, mehrere \textit{OBUs} für den Betrieb einer Virtuellen Maschine (VM) zu bündeln\cite{conti2013mobile}.
 
 \subsection{Herkömmlicher Ansatz}
-Aktuelle Implemtierungen von Virtualisierung bauen, wie in Abbildung \ref{fig:fullVirtual} gezeigt, auf der Idee auf, dass eine sogenannte \textit{Hypervisor}-Software die VMs kontrolliert und ihnen die Ressourcen zuweist.
-Abbildung \ref{fig:obuVirtual} zeigt die nowtendigen Anpassungen für eine Verwendung in \textit{VCs}.
+Aktuelle Implementierungen von Virtualisierung bauen, wie in Abbildung \ref{fig:fullVirtual} gezeigt, auf der Idee auf, dass eine sogenannte \textit{Hypervisor}-Software die VMs kontrolliert und ihnen die Ressourcen zuweist.
+Abbildung \ref{fig:obuVirtual} zeigt die notwendigen Anpassungen für eine Verwendung in \textit{VCs}.
 Mehrere \textit{OBUs} werden gebündelt und der Datenfluss durch einen sogenannten \textit{Resource Scheduler (RS)} kontrolliert.
 Somit lassen sich die verfügbaren Ressourcen einer VM durch die Hinzunahme beziehungsweise Entfernung von \textit{OBUs} anpassen.
-Die Basisblöcke von CPU-Instruktionen würden durch den RS an die \textit{OBUs} verteilt werden.
+Die Basisblöcke von CPU-Instruktionen würden durch den \textit{RS} an die \textit{OBUs} verteilt werden.
 
 \begin{figure}[h]
 \centering
@@ -715,7 +715,7 @@ Die Basisblöcke von CPU-Instruktionen würden durch den RS an die \textit{OBUs}
 \label{fig:obuVirtual}
 \end{figure}
 
-Die durchschnittliche Datenrate von DDR4-Arbeitsspeicher liegt zwischen 2 und 3Gbits und somit eine Mindestanforderung für die Funktion einer \textit{VC}.
+Die durchschnittliche Datenrate von DDR4-Arbeitsspeicher liegt zwischen 2 und 3Gbits und ist somit eine Mindestanforderung für die Funktion einer \textit{VC}.
 Eine Datenrate von 40Gbits wäre notwendig, um eine 2Gbits Übertragung von Basisblöcken zu ermöglichen\cite{conti2013mobile}.
 Da die derzeit unterstützte Datenrate von \textit{DSRC} bei 27Gbits liegt, ist eine Umsetzung dieses Ansatzes momentan nicht denkbar\cite{advTrans2017}.
 
@@ -724,7 +724,7 @@ Ein weiterer Ansatz bietet sich besonders für Anwendungsfälle wie das in Kapit
 In Abbildung \ref{fig:loadBalance} wird der Aufbau des Lastverteilungs-Ansatzes dargestellt.
 Der \textit{Cluster Controller} befindet sich in diesem Fall auf den \textit{RSUs} und kommunziert mit den \textit{Node Controllern}, welche auf den \textit{OBUs} laufen.
 Bei der Ankunft neuer Fahrzeuge werden die \textit{OBUs} von einer \textit{Load Balancer}-Komponente des \textit{Cluster Controllers} registriert und einer VM zugewiesen.
-Der \textit{Load Balancer} speichert Informationen über die VMs wie die zugrundeliegenden \textit{OBUs}, IP und die angebotenen Dienste ab und weist eingehende Anfragen möglichst effizient den VMs zu.
+Der \textit{Load Balancer} speichert Informationen über die VMs, wie die zugrundeliegenden \textit{OBUs}, IP und die angebotenen Dienste, ab und weist eingehende Anfragen möglichst effizient den VMs zu.
 Dazu können Zufallsalgorithmen oder beispielsweise \textit{Round Robin} angewandt werden\cite{conti2013mobile}.
 
 \begin{figure}[h]
@@ -742,11 +742,11 @@ Somit hängt die Bereitstellungsdauer des Dienstes von dem gewählten Kommunikat
 Dieser Ansatz ermöglicht die Aufteilung eines Dienstes in kleinere Images, welche gemeinsam eine einzelne große VM bilden\cite{conti2013mobile}.
 
 \subsubsection{Abmeldung von Knoten}
-Wenn ein Fahrzeug den \textit{Cluster} verlässt, muss der \textit{Cluster Controller} sicherstellen, dass alle Anfragen weiterhin verarbeitet werden.
+Wenn ein Fahrzeug den \textit{Cluster} verlässt, muss der \textit{Cluster Controller} sicherstellen, dass weiterhin alle Anfragen verarbeitet werden.
 Zusätzlich müssen die Antwortzeiten der Dienste, welche von der betroffenen VM bereitgestellt werden, in einem akzeptablen Maß bleiben.
 Dieser Vorgang beginnt mit dem Versand einer Nachricht durch das Fahrzeug an den \textit{Cluster Controller}, dass dieses Fahrzeug sich abmelden möchte.
 Daraufhin wird gewartet, ob sich ein neues Fahrzeug anmelden möchte.
-Sollte in dem zuvor festgelegten Zeitraum sich kein neues Fahrzeug anmelden, werden benachbarte \textit{Cluster Controller} gefragt, ob sie einen Ersatz bereitstellen können.
+Sollte sich in dem zuvor festgelegten Zeitraum kein neues Fahrzeug anmelden, werden benachbarte \textit{Cluster Controller} gefragt, ob sie einen Ersatz bereitstellen können.
 Dabei muss sich der Ersatz allerdings in Kommunikationsreichweite des anfragenden \textit{Cluster Controllers} befinden\cite{conti2013mobile}.
 
 % ----------------------------------------------------------------------------------------------------------------------
@@ -757,12 +757,12 @@ Mithilfe des Konzepts der \textit{Vehicular Clouds} wurde ein Einblick in die zu
 Die \textit{Vehicular Cloud} ist eine Weiterentwicklung der \textit{VANETs}, welche ungenutzte Ressourcen von Fahrzeugen wie Rechenleistung, Internetverbindung und Speicher nutzt, um sie mit anderen Fahrzeugen zu teilen oder an Dritte zu vermieten.
 Es wurde gezeigt, dass auf diese Weise Verkehrsereignisse abgewendet werden können, indem die Ressourcen der beteiligten Fahrzeuge verwendet werden.
 Außerdem wurde eine Abwandlung eines Rechenzentrums vorgestellt, welche mittels der Fahrzeugressourcen Dienste an Dritte bereitstellen kann.
-Dabei entstehende Sicherheitsprobleme und Bedenken hinsichtlich der Privatsphäre wurden genannt und teilweise Lösungsansätze vorgestellt.
+Dabei entstehende Sicherheitsprobleme und Bedenken hinsichtlich der Privatsphäre wurden genannt und einige Lösungsansätze vorgestellt.
 Schließlich wurden die Struktur von \textit{Vehicular Clouds} und Ansätze für die Zuweisung von Ressourcen erläutert.
 
 Es ist davon auszugehen, dass \textit{VANETs} unseren Straßenverkehr in der nahen Zukunft sicherer gestalten werden und damit einhergehend die Ressourcen der Fahrzeuge, wie die Rechenleistung oder auch der vorhandene Speicher, zunehmen werden.
-Wenn diese Ressourcen nicht gänzlich ausgeschöpft werden, bietet sich dazu eine Verwendung für \textit{Cloud Computing} an.
-Da für die eingebetteten Systeme der Fahrzeuge allerdings Limitierungen wie die Mobilität oder auch die Geschwindigkeit der Verbindung herrschen, müssen die klassischen Konzepte der Virtualisierung angepasst werden.
+Da diese Ressourcen vermutlich nicht gänzlich ausgeschöpft werden, bietet sich eine Verwendung für \textit{Cloud Computing} an.
+Für die eingebetteten Systeme der Fahrzeuge herrschen allerdings Limitierungen wie die Mobilität oder auch die Geschwindigkeit der Verbindung, sodass die klassischen Konzepte der Virtualisierung angepasst werden müssen.
 
 % ----------------------------------------------------------------------------------------------------------------------
 % \subsubsection*{Acknowledgments}
